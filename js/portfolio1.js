@@ -186,5 +186,22 @@ $("document").ready(function(){
     $(".window").removeClass("on")
     $("html, body").css("overflow", "hidden visible")
   })
-  $()
+  const $list = $(".design-content .content-wrap .right-content ul li")
+  const $img = $(".design-content .content-wrap .left-content img")
+
+  let content_img = [
+    "http://via.placeholder.com/150/red",
+    "http://via.placeholder.com/150/t12",
+    "http://via.placeholder.com/150/w16",
+    "http://via.placeholder.com/150/92w",
+    "http://via.placeholder.com/150/u72",
+  ]
+
+  $list.click(function(){
+    // 클릭할 당시 현재의 인덱스 값을 변수명에 임시로 저장한다.
+    let list_index = $(this).index();
+
+    $img.attr("src", content_img[list_index])
+    return false;
+  })
 })

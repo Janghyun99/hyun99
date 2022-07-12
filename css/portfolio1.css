@@ -33,6 +33,13 @@ a{text-decoration: none; color: #000;}
     font-weight: normal;
     font-style: normal;
 }
+@font-face{
+    font-family: "NotoSansKR-Black";
+    src: url(../res/NotoSansKR-Black.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 input{font-family: "SB aggro L";
     line-height: 40px;
     font-size: 14px;
@@ -82,7 +89,7 @@ section{overflow: hidden;}
     /* text-align: center; */
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
     transition: 0.7s;
     overflow: hidden;
     z-index: 99;
@@ -182,9 +189,10 @@ section{overflow: hidden;}
     color: #fff;
 }
 .chat-bot .bot-content .bot-top p:nth-child(1){
+    font-family: "NotoSansKR-Black";
     line-height: 60px;
     text-align: center;
-    font-size: 18px;
+    font-size: 26px;
 }
 .chat-bot .bot-content .bot-top p:nth-child(2){
     margin-left: 20px;
@@ -640,7 +648,7 @@ video{width: 100%; height: 100%;}
 /* work */
 .section.work{
     width: 100%;
-    height: 1000px;
+    height: 2200px;
     /* background-color: #58baf0; */
     margin-bottom: 100px;
 }
@@ -656,6 +664,10 @@ video{width: 100%; height: 100%;}
     font-size: 20px;
     /* position: relative; */
 }
+.section.work .swiper-slide{
+    margin-bottom: 150px;
+}
+
 .section.work .swiper-slide .background1{
     width: 1920px;
     height: 1000px;
@@ -751,7 +763,7 @@ video{width: 100%; height: 100%;}
     position: absolute;
     text-align: left;
     margin-left: 360px;
-    margin-bottom: 80px;
+    margin-bottom: 250px;
 }
 .swiper-pagination-bullet{
     font-family: "SB aggro L";
@@ -871,6 +883,129 @@ video{width: 100%; height: 100%;}
 .section.work .swiper-slide .slide-btn a{
     color: #fff;
 }
+/* ------------design------------------ */
+.design-content{
+    width: 100%;
+    height: 1000px;
+    border: 1px solid #aaa;
+}
+.design-content .content-wrap{
+    font-size: 0;
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+}
+.design-content .content-wrap > .left-content{
+    width: 600px;
+    float: left;
+    height: 100%;
+}
+.design-content .content-wrap > .right-content{
+    width: 600px;
+    float: right;
+    height: 100%;
+}
+.design-content .content-wrap .left-content{
+    text-align: center;
+}
+.design-content .content-wrap > .left-content img{
+    width: 500px;
+    height: 500px;
+    border: 5px solid #aaa;
+    margin-bottom: 40px;
+}
+
+.design-content .content-wrap .left-content > p:nth-child(1){
+    font-family: "SB aggro M";
+    display: block;
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    line-height: 50px;
+    /* padding-bottom: 30px; */
+}
+.design-content .content-wrap .left-content > p:not(:nth-child(1)){
+    font-size: 22px;
+}
+
+.design-content .content-wrap > .right-content > ul{
+    width: 600px;
+    height: 600px;
+    margin-top: 200px;
+    position: relative;
+    /* margin-left: 100px; */
+}
+.design-content .content-wrap > .right-content ul li img{
+    width: 150px;
+    height: 150px;
+}
+.design-content .content-wrap > .right-content ul li{
+    width: 300px;
+    height: 150px;
+    position: relative;
+    transition: 0.5s;
+}
+.design-content .content-wrap > .right-content ul li div{
+    float: left;
+}
+.design-content .content-wrap > .right-content ul li .left,
+.design-content .content-wrap > .right-content ul li .right{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+.design-content .content-wrap > .right-content ul li .left{
+    z-index: 9;
+}
+
+.design-content .content-wrap > .right-content ul li .right{
+    left: 0;
+    transition: 0.3s;
+    z-index: 8;
+}
+
+.design-content .content-wrap > .right-content ul li .right{
+    font-size: 14px;
+}
+
+.design-content .content-wrap > .right-content ul li:hover .right{
+    left: 150px;
+}
+
+.design-content .content-wrap > .right-content ul li .right p:nth-child(1){
+    line-height: 75px;
+}
+
+
+.design-content .content-wrap > .right-content ul li:nth-child(1){
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+}
+.design-content .content-wrap > .right-content ul li:nth-child(2){
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+.design-content .content-wrap > .right-content ul li:nth-child(3){
+    position: absolute;
+    top: 150px;
+    left: 450px;
+}
+.design-content .content-wrap > .right-content ul li:nth-child(4){
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+.design-content .content-wrap > .right-content ul li:nth-child(5){
+    position: absolute;
+    top: 450px;
+    left: 150px;
+}
+/* ------------design------------------ */
 
 /* work */
 
