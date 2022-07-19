@@ -1,0 +1,2076 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+@font-face {
+    font-family: "ONE Mobile OTF Bold";
+    src: url("../res/ONE\ Mobile\ OTF\ Bold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro B";
+    src: url(../res/SB\ aggro\ B.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Cafe24SsurroundAir";
+    src: url(../res/Cafe24SsurroundAir.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro M";
+    src: url(../res/SB\ aggro\ M.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro L";
+    src: url(../res/SB\ aggro\ L.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "NotoSansKR-Black";
+    src: url(../res/NotoSansKR-Black.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+input{font-family: "SB aggro L";
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+
+
+html,body{
+    font-family: "SB aggro L";
+    overflow-x: hidden;
+}
+body{overflow: scroll;
+    /* IE scroll 숨김 */
+    -ms-overflow-style: none;
+}    
+body::-webkit-scrollbar { 
+    display: none;
+    width: 0 !important;
+}
+
+section{overflow: hidden;}
+
+/* chat bot */
+.chat-bot{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 999;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.6); */
+}
+
+.message{
+    position: fixed;
+    width: 162px;
+    height: 60px;
+    right: 33px;
+    bottom: 97px;
+    font-size: 12px;
+    line-height: 20px;
+    /* text-align: center; */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    transition: 0.7s;
+    overflow: hidden;
+    z-index: 99;
+}
+.message a{
+    width: 11px;
+    height: 11px;
+    /* background-color: #000; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.message a::before{
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 2px;
+    background-color: #aaa;
+    transform: rotate(45deg);
+    right: 8px;
+    top: 10px;
+    cursor: pointer;
+}
+.message a::after{
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 2px;
+    background-color: #aaa;
+    transform: rotate(-45deg);
+    right: 8px;
+    top: 10px;
+    cursor: pointer;
+}
+.message.on{
+    right: -100px;
+    opacity: 0;
+}
+
+.message p{
+    margin-left: 15px;
+}
+
+.message p:nth-child(1){
+    margin-top: 12px;
+}
+.message #flip{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+.message #flip .imoge{
+    margin-bottom: 15px;
+}
+.message #flip .imoge:first-child{
+    animation: show 10s linear infinite;
+}
+@keyframes show{
+    0%{margin-top: 0px;}
+    14%{margin-top: -35px;}
+    26%{margin-top: -35px}
+    38%{margin-top: -70px;}
+    52%{margin-top: -70px;}
+    66%{margin-top: -35px;}
+    80%{margin-top: -35px;}
+    92%{margin-top: 0;}
+    100%{margin-top: 0;}
+}
+
+.chat-bot .bot-content{
+    position: fixed;
+    right: 30px;
+    bottom: -100%;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    transition: 1s;
+}
+.chat-bot .bot-content.on{
+    bottom: +94px;
+    z-index: 1000;
+}
+.chat-bot .bot-content .bot-top{
+    width: 100%;
+    height: 140px;
+    background-color: #5ec4b9;
+    border-radius: 10px 10px 0 0;
+}
+.chat-bot .bot-content .bot-top p{
+    font-family: "SB aggro L";
+    color: #fff;
+}
+.chat-bot .bot-content .bot-top p:nth-child(1){
+    font-family: "NotoSansKR-Black";
+    line-height: 60px;
+    text-align: center;
+    font-size: 26px;
+}
+.chat-bot .bot-content .bot-top p:nth-child(2){
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+.chat-bot .bot-content .bot-top p:nth-child(3){
+    font-size: 13px;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.chat-bot .bot-content .bot-center img{
+    margin-top: 15px;
+    text-align: center;
+}
+.chat-bot .bot-content .bot-center p:nth-child(2){
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.chat-bot .bot-content .bot-center > p:nth-child(5){
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.chat-bot .bot-content .bot-center a{
+    margin-left: 20px;
+    color: #58baf0;
+}
+.chat-bot .bot-content .bot-center a:nth-child(3){
+    margin-left: 25px;
+}
+.chat-bot .bot-content .bot-center pre{
+    font-family: "SB aggro L";
+    font-size: 16px;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+.chat-bot .bot-content .bot-center p:nth-child(2){
+    margin-left: 20px;
+}
+
+.chat-bot .bot-content .bot-center .center-btn{
+    width: 170px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #5ec4b9;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+.chat-bot .bot-content .bot-center .center-btn a{
+    color: #fff;
+    margin: 0;
+}
+.chat-bot .bot-content .bot-center .center-btn:hover a{
+    color: #5ec4b9;
+}
+
+.chat-bot .bot-content .bot-center .center-btn:hover{
+    background-color: #fff;
+    border: 1px solid #5ec4b9;
+    box-sizing: border-box;
+}
+/* chat bot */
+
+/* indicator */
+.indicator{
+    position: fixed;
+    left: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+}
+.indicator ul li{
+    font-family: "SB aggro M";
+    margin: 25px 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #3f5692;
+    cursor: pointer;
+    position: relative;
+    opacity: 1;
+}
+.indicator > ul > li:hover{
+    background-color: #3f5692;
+}
+
+.indicator > ul > li.on{
+    background-color: #3f5692;
+}
+.indicator > ul > li::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #3f5692;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+.indicator > ul > li::after{
+    position: absolute;
+    content: attr(data-text);
+    left: 25px;
+    width: 0px;
+    font-size: 12px;
+    top: -12px;
+    height: 25px;
+    margin-bottom: 3px;
+    line-height: 25px;
+    color: #000;
+    text-align: center;
+    transition: 0.2s 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom: 0.25px solid #000;
+}
+.indicator ul li:hover::after,
+.indicator ul li.on::after{
+    width: 70px;
+}
+
+.indicator ul li.on::before,
+.indicator ul li.on::after{
+    opacity: 1;
+    visibility: visible;
+}
+.indicator ul li:hover::before,
+.indicator ul li:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+
+.indicator ul li:nth-child(3):hover ul li{
+    opacity: 1;
+    
+}
+.indicator ul li:nth-child(3) ul{
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    overflow: hidden;
+    left: 20px;
+    top: 15px;
+    margin: 5px 0;
+}
+
+.indicator ul li:nth-child(3) > ul li{
+    font-family: "SB aggro L";
+    width: 81px;
+    height: 18px;
+    top: -70px;
+    position: relative;
+    left: 0px;
+    border: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    transition: 1s 1s;
+    /* line-height: 17px; */
+}
+.indicator ul li:nth-child(3) > ul li::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #3f5692;
+    opacity: 0;
+    /* transition: 0.3s 0.5s; */
+}
+.indicator ul li:nth-child(3) > ul li:hover::after{
+    opacity: 1;
+}
+
+.indicator ul li:nth-child(3) > ul li:nth-child(2){
+    top: -60px;
+}
+.indicator ul li:nth-child(3):hover ul li{
+    top: 0px;
+}
+/* indicator */
+
+/* nav */
+.nav{
+    position: fixed;
+    top: 0;
+    font-family: "SB aggro M";
+    width: 100%;
+    height: 80px;
+    z-index: 99;
+    background-color: rgba(255,255,255,0.5);
+    box-sizing: border-box;
+    border-bottom: 2px solid #fff;
+    transition: 0.5s;
+}
+.nav.on{
+    background-color: rgba(0,90,153,0.5);
+    transition: 0.5s;
+}
+.nav.on ul li a{
+    color: #fff;
+}
+.nav.on ul li.on::after{
+    background-color: #fff;
+}
+.nav.on ul li:hover::after{
+    background-color: #fff;
+}
+
+
+.nav-wrap{
+    max-width: 1145px;
+    margin: 0 auto;
+    line-height: 80px;
+}
+.nav ul li{
+    font-family: "SB aggro M";
+    width: 20%;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.nav ul li a{
+    color: #3f5692;
+}
+.nav ul li:nth-child(3){
+    font-size: 28px;
+    font-family: "SB aggro B";
+}
+.nav ul li:hover a{
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav ul li:not(:nth-child(3)):after{
+    content: "";
+    width: 0px;
+    height: 2px;
+    position: absolute;
+    background-color: #3f5692;
+    bottom: 20px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+.nav ul li:hover::after{
+    width: 100px;
+    opacity: 1;
+}
+.nav ul li.on::after{
+    width: 100px;
+    opacity: 1;
+}
+.nav ul li.on a{
+    font-weight: bold;
+}
+/* nav */
+.section.title-text{
+    position: relative;
+}
+.section.title-text .introduce{
+    display: block;
+    position: absolute;
+    color: #fff;
+    top: 880px;
+    right: 250px;
+    font-size: 28px;
+    font-family: "SB aggro B";
+}
+
+video{width: 100%; height: 100%;}
+.section-video {
+    width: 100%;
+    height: 160%;
+}
+.section-video img{display: none; width: 100%; height: auto;}
+
+.about-btn{
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 720px;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+    z-index: 999;
+    color: #fff;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.about-btn:hover{
+    border: 2px solid #1869fe;
+    color: #1869fe;
+}
+
+.mouse{
+    position: absolute;
+    top: 850px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    animation: mouse 3s linear infinite;
+}
+.mouse img{
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+
+@keyframes mouse {
+    0%{margin-top: 0px;}
+    16%{margin-top: -15px;}
+    28%{margin-top: -25px;}
+    40%{margin-top: -35px;}
+    52%{margin-top: -45px;}
+    64%{margin-top: -35px;}
+    76%{margin-top: -25px;}
+    88%{margin-top: -15px;}
+    100%{margin-top: 0px;}
+}
+
+.section.title{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: black;
+    text-align: center;
+}
+.section-wrap {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.section-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.section-title {
+    display: inline-block;
+    font-size: 36px;
+    /* overflow: hidden; */
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.section-title .title1{
+    display: block;
+    transform: translateY(0%);
+}
+.section-title .title2{
+    display: block;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translate(0px, -60px);
+}
+.section-title .title3{
+    opacity: 0;
+    display: block;
+    transform: translate(0px, -100px);
+}
+.section{
+    overflow: hidden;
+}
+/* about */
+
+.section.about{
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.section.about > .about-wrap{
+    width: 1555px;
+    margin: 0 auto;
+    height: 1000px;
+    position: relative;
+    /* overflow-x: hidden; */
+}
+.section.about > .about-wrap .about-content{
+    width: 1480px;
+    height: 950px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0px 20px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 20px;
+    left: 50%;;
+    transform: translateX(-50%);
+}
+.section.about .about-wrap .picture{
+    width: 345px;
+    height: 345px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.2);
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+.section.about .about-wrap .about-text{
+    position: relative;
+    top: 520px;
+    left: 120px;
+}
+.section.about .about-wrap .about-text::after{
+    content: "";
+    width: 1px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+}
+.section.about .about-wrap .about-text p:nth-child(1){
+    font-family: "SB aggro L";
+    font-size: 22px;
+}
+.section.about .about-wrap .about-text p:nth-child(2){
+    font-family: "SB aggro M";
+    font-size: 27px;
+    line-height: 65px;
+}
+.section.about .about-wrap .about-profile{
+    position: relative;
+    top: 145px;
+    left: 570px;
+}
+.section.about .about-wrap .about-profile p:nth-child(1){
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.section.about .about-wrap .about-profile p:nth-child(2){
+    font-family: "SB aggro L";
+    font-size: 18px;
+}
+.section.about .about-wrap .about-profile p:nth-child(3){
+    margin-bottom: 30px;
+}
+.section.about .about-wrap .about-profile p{
+    font-family: "SB aggro L";
+    font-size: 14px;
+    line-height: 24px;
+}
+.section.about .about-wrap .about-education{
+    position: relative;
+    left: 570px;
+    top: 300px;
+}
+.section.about .about-wrap .about-education p:nth-child(1){
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.section.about .about-wrap .about-education p:nth-child(3){
+    margin-top: 10px;
+}
+.section.about .about-wrap .about-education p{
+    font-family: "SB aggro L";
+    font-size: 16px;
+    line-height: 24px;
+}
+.section.about .about-hobby{
+    position: absolute;
+    bottom: 130px;
+    right: 320px;
+}
+.section.about .about-hobby{
+    font-size: 0;
+}
+.section.about .about-hobby p{
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.section.about .about-hobby ul li{
+    width: 66px;
+    height: 66px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 66px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+.section.about .about-hobby ul li img{
+    margin-top: 10px;
+    width: 46px;
+    height: 46px;
+}
+.section.about .about-hobby ul li:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+/* about */
+
+/* work */
+.section.work{
+    width: 100%;
+    height: 2200px;
+    /* background-color: #58baf0; */
+    margin-bottom: 100px;
+}
+.section.work .swiper.main-slide > p{
+    font-family: "SB aggro B";
+    top: 140px;
+    font-size: 32px;
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+/* .work-wrap{
+    max-width: 1145px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+} */
+.section.work {
+    /* font-family: "SB aggro L"; */
+    font-size: 20px;
+    /* position: relative; */
+}
+.section.work .swiper-slide{
+    margin-bottom: 150px;
+}
+
+.section.work .swiper-slide > .background1{
+    width: 1920px;
+    height: 1000px;
+    background-color: #58baf0;
+    opacity: 0.5;
+}
+.section.work .swiper-slide > .background2{
+    width: 1920px;
+    height: 1000px;
+    background-color: #aedb73;
+    opacity: 0.5;
+}
+.section.work .swiper-slide > .background3{
+    width: 1920px;
+    height: 1000px;
+    background-color: #f0a758;
+    opacity: 0.5;
+}
+.section.work .swiper-slide > .background4{
+    width: 1920px;
+    height: 1000px;
+    background-color: #d4b1db;
+    opacity: 0.5;
+}
+.section.work .swiper-slide .slide-btn:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.section.work .swiper-slide .item img{
+    position: absolute;
+    z-index: 99;
+    width: 600px;
+    height: 600px;
+    background-color: #000;
+    top: 270px;
+    right: 360px;
+}
+.section.work .swiper-slide .slide-btn{
+    width: 150px;
+    height: 50px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 365px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.section.work .swiper-slide .slide-btn a{
+    color: #fff;
+}
+.swiper-pagination-bullet {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #000;
+    opacity: 1;
+    background: none;
+    position: relative;
+}
+.swiper-pagination-bullet::before{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+.swiper-pagination-bullet:hover::before{
+    opacity: 1;
+    width: 80%;
+}
+
+.swiper-pagination-bullet-active{
+    color: #fff;
+}
+.swiper-pagination-bullet-active::after{
+    content: "";
+    width: 80%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination{
+    position: absolute;
+    text-align: left;
+    margin-left: 360px;
+    margin-bottom: 250px;
+}
+.swiper-pagination-bullet{  
+    font-family: "SB aggro L";
+    font-size: 20px;
+}
+
+.prev{
+    position: absolute;
+    top: 145px;
+    left: 20vw;
+    width: 100px;
+    height: 20px;
+    color: #fff;
+    z-index: 999;
+    cursor: pointer;
+    line-height: 20px;
+    padding-left: 45px;
+
+}
+.prev::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    transition: 0.3s;
+}
+.prev::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    bottom: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    transition: 0.3s;
+}
+.prev:hover::before{
+    width: 20px;
+    height: 1px;
+    transform: rotate(-45deg);
+    top: 2px;
+}
+.prev:hover::after{
+    width: 20px;
+    height: 1px;
+    transform: rotate(45deg);
+    bottom: 2px;
+}
+
+.next{
+    position: absolute;
+    top: 145px;
+    right: 20vw;
+    width: 100px;
+    height: 20px;
+    color: #fff;
+    z-index: 999;
+    cursor: pointer;
+    line-height: 20px;
+    padding-right: 45px;
+}
+.next::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    transition: 0.3s;
+}
+.next::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    bottom: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    transition: 0.3s;
+}
+.next:hover::before{
+    width: 20px;
+    height: 1px;
+    transform: rotate(45deg);
+    top: 2px;
+}
+.next:hover::after{
+    width: 20px;
+    height: 1px;
+    transform: rotate(-45deg);
+    bottom: 2px;
+}
+
+.section.work .swiper-slide .slide-btn{
+    width: 150px;
+    height: 50px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 365px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.section.work .swiper-slide .slide-btn a{
+    color: #fff;
+}
+/* ------------design------------------ */
+.design-content{
+    width: 100%;
+    height: 1100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.design-content .content-wrap{
+    width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.design-content .content-wrap .machine > p{
+    font-family: "SB aggro B";
+    margin: 0 auto;
+    font-size: 28px;
+    margin-top: 40px;
+    color: #000;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.design-content .content-wrap .machine{
+    position: absolute;
+    /* margin: 0 auto; */
+    border-radius: 20px 20px 0 0;
+    width: 600px;
+    height: 800px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    /* border: 1px solid #fff; */
+    border: 3px solid #000;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
+}
+.design-content .content-wrap .machine .big-box{
+    width: 500px;
+    height: 450px;
+    border: 2px solid #000;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.design-content .content-wrap .machine .big-box img{
+    width: 100%;
+    height: 100%;
+}
+.design-content .content-wrap .folder{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    right: -1100px;
+    top: 300px;
+    background-color: #000;
+}
+.design-content .content-wrap .folder > img{
+    width: 300px;
+    height: 450px;
+    transform: rotate(-90deg);
+}
+.design-content .content-wrap .folder ul li{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+.design-content .content-wrap .folder ul li:nth-child(1){
+    left: -220px;
+}
+.design-content .content-wrap .folder ul li img{
+    width: 350px;
+    height: 350px;
+    /* opacity: 0; */
+}
+.design-content .content-wrap .folder ul li.on{
+    left: -220px;
+}
+
+.design-content .content-wrap .folder ul li.on img{
+    opacity: 1;
+}
+.design-content .content-wrap .folder ul li.on{
+    left: -220px;
+    z-index: 1;
+}
+
+.design-content .content-wrap .disk ul li img{
+    width: 100%;
+    height: 100%;
+}
+.design-content .machine .button{
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 80px;
+    /* background-color: yellow; */
+    /* z-index: 9; */
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.design-content .machine .button ul li{
+    float: left;
+    width: 100px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    position: relative;
+    /* z-index: 1; */
+    /* box-shadow: 0px 0px 10px rgba(20,41,102,1); */
+    background-color: #fff;
+    cursor: pointer;
+}
+.design-content .machine .button ul li a{
+    color: #ff3e3e;
+}
+
+.design-content .machine .button ul li::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    display: block;
+    height: 15px;
+    border-radius: 5px 5px 0 0;
+    background-color: #ff3e3e;
+    box-shadow: 0px 0px 10px 0px rgba(255,62,62,0.5);
+    cursor: pointer;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    top: -14px;
+    transition: .3s;
+    transform: translateZ(-1px)  translateX(-50%);
+    z-index: -1;
+}
+.design-content .machine .button ul li.on::before{
+    top: -7px;
+    background-color: #6ee162;
+    box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
+}
+.design-content .machine .button ul li.on a{
+    color: #6ee162;
+}
+
+.design-content .machine .button ul li:hover::before{
+    background-color: #6ee162;
+    box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
+}
+.design-content .machine .button ul li:hover a{
+    color: #6ee162;
+}
+.design-content .machine .button ul li:not(:nth-child(1))::after{
+    content: "";
+    width: 1px;
+    height: 40px;
+    background-color: #aaa;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+.design-content .machine .button ul li #light{
+    width: 15px;
+    height: 15px;
+    background-color: #ff3e3e;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50px;
+    box-shadow: 0px 0px 10px 0px rgba(255,62,62,0.5);
+    transition: 0.3s;
+}
+
+.design-content .machine .button ul li #light.on{
+    background-color: #6ee162;
+    box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
+}
+
+/* ------------design------------------ */
+
+/* work */
+
+/* contact */
+.section.contact{
+    width: 100%;
+    height: 800px;
+    align-items: center;
+    position: relative;
+}
+.section.contact .contact-color{
+    width: 100%;
+    height: 380px;
+    background-color: #5ec4b9;
+    position: absolute;
+    bottom: 0;
+}
+/* .section.contact .contact-color .contact-wrap{
+    max-width: 1145px;
+    height: 400px;
+    margin: 0 auto;
+} */
+.section.contact .contact-color .contact-wrap p:nth-child(1){
+    font-family: "SB aggro L";
+    font-size: 40px;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+}
+.section.contact .contact-color .contact-wrap p:nth-child(2){
+    font-family: "SB aggro L";
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+}
+.section.contact .contact-btn{
+    font-family: "SB aggro L";
+    width: 300px;
+    height: 75px;
+    border: 1px solid #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 88px;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    line-height: 75px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    /* box-shadow: 0 0 2px 0 rgba(0,0,0,0.5); */
+}
+
+.section.contact .contact-btn:hover{
+    border-radius: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    bottom: 85px;
+}
+.section.contact .contact-btn p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.2s;
+}
+.section.contact .contact-btn:hover p{
+    font-family: "SB aggro M";
+    opacity: 1;
+    color: #5ec4b9;
+    font-size: 18px;
+}
+
+.section.contact .contact-btn a{
+    font-size: 25px;
+    color: #fff;
+}
+/* contact */
+
+/* -------------window-content-------------- */
+.window{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 999;
+    transition: 0.5s 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.window.on{
+    opacity: 1;
+    visibility: visible;
+}
+.window .window-content{
+    width: 600px;
+    height: 800px;
+    position: relative;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    text-align: center;
+}
+.window .window-content p{
+    font-family: "SB aggro B";
+    padding-top: 60px;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+.window .window-content .kakao{
+    margin-top: 70px;
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.window .window-content .kakao img{
+    width: 200px;
+    height: 200px;
+}
+.window .window-content .kakao p{
+    padding: 0;
+    margin-top: 40px;
+}
+
+.window .window-content .kakao a{
+    font-family: "SB aggro M";
+    position: absolute;
+    top: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: #fae100;
+    color: #3b1e1e;
+}
+.window .window-content .kakao a:hover{
+    background-color: #3b1e1e;
+    color: #fae100;
+}
+
+.window .window-content .mail{
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+}
+.window .window-content .mail p{
+    font-family: "SB aggro L";
+    padding: 0;
+    font-size: 18px;
+}
+.window .window-content .mail p:nth-child(1){
+    padding: 0;
+    margin-bottom: 10px;
+}
+.window .window-content .mail a{
+    font-family: "SB aggro M";
+    padding: 8px 30px;
+    border: 1px solid #04cf5c;
+    transition: 0.3s;
+    color: #04cf5c;
+}
+.window .window-content .mail a:hover{
+    background-color: #04cf5c;
+    color: #fff;
+}
+
+
+.window .content-x-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    /* background-color: #aaa; */
+    cursor: pointer;
+}
+.window .content-x-btn::before{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(45deg);
+}
+.window .content-x-btn::after{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-45deg);
+}
+
+
+/* -------------window-content-------------- */
+
+@media screen and (min-width:1201px){
+    .mobile{display: none;}
+    .section.contact .hand{display: none;}
+}
+@media screen and (min-width:641px) and (max-width:1200px){
+    body{transition: 0.3s;}
+    .mobile{display: none;}
+    .section.contact .hand{display: none;}
+    .section.contact{
+        width: 100%; 
+        height: 1000px; 
+        background-color: #5ec4b9;}
+    
+    .section.contact .contact-color .contact-wrap p:nth-child(1){
+        font-family: "SB aggro L";
+        font-size: 30px;
+        color: #fff;
+        margin-top: 150px;
+        text-align: center;
+    }
+    .section.contact .contact-color .contact-wrap p:nth-child(2){
+        font-family: "SB aggro L";
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        line-height: 48px;
+    }
+    .section.contact .contact-btn{
+        font-family: "SB aggro L";
+        width: 300px;
+        height: 75px;
+        border: 2px solid #fff;
+        position: absolute;
+        left: 50%;
+        bottom: 55px;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        line-height: 75px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .section.contact .contact-btn:hover{
+        border-radius: 40px;
+        background-color: #fff;
+        bottom: 55px;
+    }
+    .section.contact .contact-btn p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        transition: 0.2s;   
+    }
+    .section.contact .contact-btn:hover p{
+        opacity: 1;
+        color: #5ec4b9;
+        font-size: 18px;
+    }
+    
+    .section.contact .contact-btn a{
+        font-size: 25px;
+        color: #fff;
+    }
+    .section.contact .hand {
+        width: 50px;
+        height: 50px;
+        /* background-color: #000; */
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        top: 141px;
+        left: 60px;
+        animation: hand 1s linear infinite;
+    }
+    @keyframes hand {
+        0%{transform: rotate(-20deg);}
+        13%{transform: rotate(-15deg);}
+        26%{transform: rotate(0deg);}
+        39%{transform: rotate(10deg);}
+        50%{transform: rotate(20deg);}
+        63%{transform: rotate(10deg);}
+        76%{transform: rotate(0deg);}
+        89%{transform: rotate(-15deg);}
+        100%{transform: rotate(-20deg);}
+    }
+    .window .window-content{
+        width: 500px;
+        height: 700px;
+    }
+    .window .window-content p{
+        font-family: "SB aggro B";
+        padding-top: 40px;
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width:640px){
+.nav{display: none;}
+.indicator{display: none;}
+.chat-bot{display: none;}
+.message{display: none;}
+
+input{font-size: 14px;}
+
+.section.title-text .introduce{
+    display: block;
+    position: absolute;
+    color: #fff;
+    top: 90%;
+    right: 30px;
+    font-size: 20px;
+    font-family: "SB aggro B";
+}
+
+.section-wrap{
+    background: url("../images/tide.png") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.section-video video{display: none;}
+
+.mobile .mobile-menu{
+    font-family: "SB aggro M";
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 99;
+    right: -100%;
+    transition: 0.5s;
+}
+.mobile .mobile-menu.on{
+    right: 0;
+}
+
+.mobile .mobile-menu ul li{
+    text-align: center;
+    margin: 10vw 0;
+    height: 20vw;
+    line-height: 20vw;
+    font-size: 6vw;
+}
+.mobile .mobile-menu ul li a{
+    color: #3f5692;
+}
+
+.mobile .mobile-btn ul li{
+    position: fixed;
+    width: 66px;
+    height: 66px;
+    background: url(../images/arrow-down.png);
+    transform: rotate(90deg);
+    z-index: 100;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transform: 0.3s;
+}
+.mobile .mobile-btn ul li.on{
+    background: url(../images/arrow-down.png);
+    transform: rotate(-90deg);
+    transition: 0.3s;
+}
+.section-content .title-text-desc{
+    font-size: 5vw;
+}
+.section-content .title-text-desc:nth-child(1){
+    margin-top: 20px;
+}
+.section-content .title-text-desc:nth-child(2){
+    margin-top: 70px;
+}
+.section-content .title-text-desc:nth-child(3){
+    margin-top: 10px;
+}
+.section-content .title-text-desc:nth-child(4){
+    margin-top: 20px;
+}
+/* ------------about-------------- */
+
+.section.about{
+    max-width: 640px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    height: 360vw;
+}
+.section.about > .about-wrap{
+    width: 100vw;
+    margin: 0 auto;
+    height: 350vw;
+    /* overflow-x: hidden; */
+}
+.section.about > .about-wrap .about-content{
+    width: 90vw;
+    height: 350vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0px 20px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 20px;
+    left: 50%;;
+    transform: translateX(-50%);
+}
+.section.about .about-wrap .picture{
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.2);
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section.about .about-wrap .about-text{
+    width: 80vw;
+    position: relative;
+    top: 69vw;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.section.about .about-wrap .about-text::after{
+    content: "";
+    width: 1px;
+    height: 15vw;
+    background-color: #000;
+    position: absolute;
+    top: 24vw;
+    left: 50%;
+    transform: translate(-50%);
+}
+.section.about .about-wrap .about-text p:nth-child(1){
+    font-family: "SB aggro L";
+    font-size: 5vw;
+}
+.section.about .about-wrap .about-text p:nth-child(2){
+    font-family: "SB aggro M";
+    font-size: 6vw;
+    line-height: 65px;
+}
+.section.about .about-wrap .about-profile{
+    width: 50vw;
+    position: relative;
+    top: 95vw;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.section.about .about-wrap .about-profile p:nth-child(1){
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.section.about .about-wrap .about-profile p:nth-child(2){
+    font-family: "SB aggro L";
+    font-size: 18px;
+}
+.section.about .about-wrap .about-profile p:nth-child(3){
+    margin-bottom: 15px;
+}
+.section.about .about-wrap .about-profile p{
+    font-family: "SB aggro L";
+    font-size: 14px;
+    line-height: 24px;
+}
+.section.about .about-wrap .about-education{
+    width: 60vw;
+    position: relative;
+    top: 105vw;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.section.about .about-wrap .about-education p:nth-child(1){
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.section.about .about-wrap .about-education p:nth-child(3){
+    margin-top: 10px;
+}
+.section.about .about-wrap .about-education p{
+    font-family: "SB aggro L";
+    font-size: 16px;
+    line-height: 24px;
+}
+.section.about .about-hobby{
+    width: 60vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    top: 117vw;
+}
+.section.about .about-hobby{
+    font-size: 0;
+}
+.section.about .about-hobby p{
+    font-family: "SB aggro M";
+    font-size: 22px;
+    margin-bottom: 5vw;
+}
+
+.section.about .about-hobby ul li{
+    width: 16vw;
+    height: 16vw;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 26vw;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.section.about .about-hobby ul li img{
+    margin-top: 10px;
+    width: 10vw;
+    height: 10vw;
+}
+/* ------------about-------------- */
+
+/* -------------work-------------- */
+.swiper-pagination{
+    display: none;
+}
+.section.work{
+    width: 100vw;
+    height: 200vw;
+    /* background-color: #58baf0; */
+    margin-bottom: 25vw;
+}
+
+.section.work .swiper-slide .background1{
+    width: 100vw;
+    height: 150vw;
+    background-color: #58baf0;
+    position: relative;
+}
+.section.work .swiper-slide .background2{
+    width: 100vw;
+    height: 150vw;
+    background-color: #aedb73;
+    position: relative;
+}
+.section.work .swiper-slide .background3{
+    width: 100vw;
+    height: 150vw;
+    background-color: #f0a758;
+    position: relative;
+}
+.section.work .swiper-slide .background4{
+    width: 100vw;
+    height: 150vw;
+    background-color: #d4b1db;
+    position: relative;
+}
+.section.work .swiper-slide .slide-btn:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.section.work .swiper-slide .item{
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    top: 28vw;
+    background-color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section.work .swiper-slide .item img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.prev{
+    position: absolute;
+    top: 110vw;
+    left: 3vw;
+    width: 7vw;
+    height: 2.8vw;
+    color: #fff;
+    z-index: 99999;
+    cursor: pointer;
+    padding-left: 50px;
+    line-height: 20px;
+    font-size: 3vw;
+}
+.prev::before{
+    display: none;
+}
+.prev::after{
+    display: none;
+}
+.prev:hover::before{
+    display: none;
+}
+.prev:hover::after{
+    display: none;
+}
+.next{
+    position: absolute;
+    top: 110vw;
+    width: 7vw;
+    height: 2.8vw;
+    right: 3vw;
+    color: #fff;
+    z-index: 99999;
+    cursor: pointer;
+    padding-right: 50px;
+    line-height: 20px;
+    font-size: 3vw;
+}
+.next::before{
+    display: none;
+}
+
+.next::after{
+    display: none;
+}
+.next:hover:before{
+    display: none;
+}
+.next:hover::after{
+    display: none;
+}
+.section.work .swiper-slide .slide-btn{
+    width: 20vw;
+    height: 8vw;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    top: 110vw;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 8vw;
+    cursor: pointer;
+    font-size: 3.3vw;
+}
+.section.work .swiper-slide{
+    position: relative;
+}
+
+/* -------------work-------------- */
+
+/* ----------contact-------------- */
+.section.contact{
+    width: 100vw; 
+    height: 150vw; 
+    background-color: #5ec4b9;}
+
+.section.contact .contact-color .contact-wrap p:nth-child(1){
+    font-family: "SB aggro L";
+    font-size: 5.5vw;
+    color: #fff;
+    margin-top: 150px;
+    text-align: center;
+}
+.section.contact .contact-color .contact-wrap p:nth-child(2){
+    font-family: "SB aggro L";
+    font-size: 4vw;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+}
+.section.contact .contact-btn{
+    font-family: "SB aggro L";
+    width: 45vw;
+    height: 15vw;
+    border: 2px solid #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 0vw;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    line-height: 15vw;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.section.contact .contact-btn:hover{
+    border-radius: 50px;
+    background-color: #fff;
+    bottom: 0vw;
+}
+.section.contact .contact-btn p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.2s;
+}
+.section.contact .contact-btn:hover p{
+    opacity: 1;
+    color: #5ec4b9;
+    font-size: 3vw;
+}
+
+.section.contact .contact-btn a{
+    font-size: 5vw;
+    color: #fff;
+}
+.section.contact .hand {
+    width: 6vw;
+    height: 6vw;
+    /* background-color: #000; */
+    font-size: 4vw;
+    text-align: center;
+    position: absolute;
+    top: 23vw;
+    left: 5vw;
+    animation: hand 1s linear infinite;
+}
+@keyframes hand {
+    0%{transform: rotate(-20deg);}
+    13%{transform: rotate(-15deg);}
+    26%{transform: rotate(0deg);}
+    39%{transform: rotate(10deg);}
+    50%{transform: rotate(20deg);}
+    63%{transform: rotate(10deg);}
+    76%{transform: rotate(0deg);}
+    89%{transform: rotate(-15deg);}
+    100%{transform: rotate(-20deg);}
+}
+
+.window .window-content{
+    width: 70vw;
+    height: 100vw;
+}
+.window .window-content p{
+    font-family: "SB aggro B";
+    padding-top: 6vw;
+    font-size: 3vw;
+    margin-bottom: 30px;
+}
+
+.window .window-content span{
+    font-family: "SB aggro M";
+    font-size: 2vw;
+}
+
+.window .window-content ul:nth-child(2) span{
+    display: block;
+    position: absolute;
+    top: 14vw;
+    left: 17vw;
+}
+.window .window-content ul:nth-child(2) input{
+    display: block;
+    outline: none;
+    border: 1px solid rgb(214, 214, 214);
+    width: 48%;
+    height: 4vw;
+    position: absolute;
+    top: 18vw;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.window .window-content ul:nth-child(3) span{
+    display: block;
+    position: absolute;
+    top: 29vw;
+    left: 17vw;
+    font-weight: bold;
+}
+.window .window-content ul:nth-child(3) input{
+    display: block;
+    outline: none;
+    border: 1px solid rgb(214, 214, 214);
+    width: 48%;
+    height: 4vw;
+    position: absolute;
+    top: 33vw;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.window .window-content ul:nth-child(4) span{
+    display: block;
+    position: absolute;
+    top: 43vw;
+    left: 17vw;
+}
+.window .window-content ul:nth-child(4) input{
+    display: block;
+    outline: none;
+    border: 1px solid rgb(214, 214, 214);
+    width: 48%;
+    height: 4vw;
+    position: absolute;
+    top: 47vw;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.window .window-content::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background-color: #000;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 57vw;
+}
+.window .window-content ul:nth-child(5) li span{
+    display: block;
+    position: absolute;
+    top: 62vw;
+    left: 17vw;
+}
+.window .window-content ul:nth-child(5) li input{
+    display: block;
+    outline: none;
+    border: 1px solid rgb(214, 214, 214);
+    width: 48%;
+    height: 14vw;
+    position: absolute;
+    top: 68vw;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.window .window-content .content-btn{
+    font-family: "SB aggro M";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4vw;
+    width: 20vw;
+    height: 7vw;
+    border: 1px solid rgb(94, 94, 94);
+    background-color: #fff;
+    text-align: center;
+    line-height: 7vw;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.window .window-content .content-btn a{
+    font-size: 2.5vw;
+}
+
+.window .window-content .content-btn:hover{
+    background-color: rgb(71, 71, 71);  
+    border: 1px solid rgb(71, 71, 71);   
+}
+.window .window-content .content-btn:hover a{
+    color: #fff;
+}
+.window .content-x-btn{
+    position: absolute;
+    top: 5vw;
+    right: 5vw;
+    width: 30px;
+    height: 30px;
+    /* background-color: #aaa; */
+    cursor: pointer;
+}
+.window .content-x-btn::before{
+    content: "";
+    width: 5vw;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0vw;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(45deg);
+}
+.window .content-x-btn::after{
+    content: "";
+    width: 5vw;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0vw;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-45deg);
+}
+input{
+    line-height: 14vw;
+    font-size: 2vw;
+    padding-left: 2vw;
+    padding-top: 0.5vw;
+}
+
+/* ----------contact-------------- */
+}
