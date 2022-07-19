@@ -1,9 +1,12 @@
 $("document").ready(function(){
-
-  document.getElementsByTagName("video")[0].playbackRate=0.7
+  document.getElementsByTagName("video")[0].playbackRate=0.4
   $(".indicator ul li").eq(0).addClass("on")
   $(".nav ul li").eq(0).addClass("on")
   $(".section.work .work-content .number ul li").eq(0).addClass("on")
+  $(".design-content .machine .button ul li").eq(0).addClass("on")
+  $(".design-content .machine .button ul li #light").eq(0).addClass("on")
+  // $(".design-content .content-wrap .folder ul li").eq(0).addClass("on")
+
         let i = 0;
         let count = 0;
           gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +16,7 @@ $("document").ready(function(){
           scrub: true,
           pin: true,
           start: "center center",
-          end: "+=9000",
+          end: "+=4000",
           ease: "power2"
         }
       })
@@ -21,14 +24,12 @@ $("document").ready(function(){
   .to(".title1", 1 , {y: 10, opacity:0})
   .to(".title1", 1 , {y: 150})
   // .to(".title2", 1 , {y: -5,opacity:0})
-  .to(".title2", 1 , {y: -110,opacity:1})
+  .to(".title2", 1 , {y: -70,opacity:1})
   // .to(".title2, .logo p", 1 , {y:10,opacity:0})
   // .to(".title2, .logo p", 1 , {y: 80})
-  .to(".title2", 1 , {y: -100,opacity:0})
-  .to(".title3", 1 , {y: -150,opacity:1})
-  .to(".title3", 1 , {y: -100,opacity:0})
-  .to(".title4", 1 , {y: -190, opacity:1})
-  .to(".title4", 1 , {y: -100, opacity:0})
+  .to(".title2", 1 , {y: -70,opacity:0})
+  .to(".title3", 1 , {y: -110,opacity:1})
+  .to(".title3", 1 , {y: -110,opacity:0})
           
   $(".nav ul li").click(function(){
     let i = $(this).index()
@@ -68,15 +69,23 @@ $("document").ready(function(){
       delay: 3000
     }
   })
+  const design_slide = new Swiper(".design-slide",{
+    loop:true,
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination-1",
+      clickable:true
+    }
+  })
 
   $(window).scroll(function(){
     let pos = $(window).scrollTop()
     // console.log(pos)
-    if(pos < 9795){
+    if(pos < 4795){
       $(".indicator ul li").eq(0).addClass("on")
       $(".nav ul li").eq(0).addClass("on")
     }
-    if(pos >= 9795){
+    if(pos >= 4795){
       $(".nav ul li").eq(0).removeClass("on")
       $(".nav ul li").eq(1).addClass("on")
       $(".indicator ul li").eq(0).removeClass("on")
@@ -85,7 +94,7 @@ $("document").ready(function(){
       $(".nav ul li").eq(1).removeClass("on")
       $(".indicator ul li").eq(1).removeClass("on")
     }
-    if(pos >= 10900){
+    if(pos >= 5900){
       $(".nav ul li").eq(1).removeClass("on")
       $(".indicator ul li").eq(1).removeClass("on")
       $(".nav ul li").eq(3).addClass("on")
@@ -94,7 +103,7 @@ $("document").ready(function(){
       $(".nav ul li").eq(3).removeClass("on")
       $(".indicator ul li").eq(2).removeClass("on")
     }
-    if(pos >= 12000){
+    if(pos >= 7900){
       $(".nav ul li").eq(3).removeClass("on")
       $(".indicator ul li").eq(2).removeClass("on")
       $(".nav ul li").eq(4).addClass("on")
@@ -103,28 +112,41 @@ $("document").ready(function(){
       $(".nav ul li").eq(4).removeClass("on")
       $(".indicator ul li:nth-child(4)").removeClass("on")
     }
+    if(pos > 4000){
+      $(".nav").addClass("on")
+    }else{
+      $(".nav").removeClass("on")
+    }
+    // if(pos >= 8200){
+    //   $("design-content > p").addClass("on")
+    // }
   })
   $(".indicator ul li").click(function(){
     let i = $(this).index()
     console.log(i)
     $(".indicator ul li").eq(0).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 8890
+        scrollTop: 3890
       }, 1500)
     })
     $(".indicator ul li").eq(1).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 10057
+        scrollTop: 5057
       }, 1500)
     })
     $(".indicator ul li").eq(2).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 11140
+        scrollTop: 6140
+      }, 1500)
+    })
+    $(".indicator ul li:nth-child(3) ul li").eq(1).click(function(){
+      $("html,body").stop().animate({
+        scrollTop: 7300
       }, 1500)
     })
     $(".indicator ul li:nth-child(4)").click(function(){
       $("html,body").stop().animate({
-        scrollTop: 12250
+        scrollTop: 8300
       }, 1500)
     })
     // $(".indicator ul li:nth-child(3) ul li").eq(0).click(function(){
@@ -133,27 +155,32 @@ $("document").ready(function(){
     //   }, 1500)
     // })
   })
+  $(".about-btn").click(function(){
+    $("html,body").stop().animate({
+      scrollTop: 5057
+    }, 1500)
+  })
 
   $(".nav ul li").click(function(){
     let i = $(this).index()
     $(".nav ul li").eq(0).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 8900
+        scrollTop: 3900
       }, 1500)
     })
     $(".nav ul li").eq(1).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 10057
+        scrollTop: 5057
       }, 1500)
     })
     $(".nav ul li").eq(3).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 11140
+        scrollTop: 6140
       }, 1500)
     })
     $(".nav ul li").eq(4).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 12250
+        scrollTop: 8300
       }, 1500)
     })
   })
@@ -186,22 +213,48 @@ $("document").ready(function(){
     $(".window").removeClass("on")
     $("html, body").css("overflow", "hidden visible")
   })
-  const $list = $(".design-content .content-wrap .right-content ul li")
-  const $img = $(".design-content .content-wrap .left-content img")
+  $(".design-content .content-wrap .machine .button ul li").click(function(){
+    let i = $(this).index()
+      $(".design-content .content-wrap .machine .button ul li").removeClass("on").eq(i).addClass("on")
+      $(".design-content .content-wrap .folder ul li").eq(i).toggleClass("on")
+      $(".design-content .content-wrap .machine .button ul li #light").removeClass("on").eq(i).addClass("on")
+      // $(".design-content .content-wrap .folder ul li").removeClass("on").eq(i).addClass("on")
+      // $(".design-content .content-wrap .machine .button ul li").eq(i).toggleClass("on")
+      return false;
+  })
+  const $list = $(".design-content .machine .button ul li")
+
+  const $img = $(".design-content .machine .big-box img")
 
   let content_img = [
-    "http://via.placeholder.com/150/red",
-    "http://via.placeholder.com/150/t12",
-    "http://via.placeholder.com/150/w16",
-    "http://via.placeholder.com/150/92w",
-    "http://via.placeholder.com/150/u72",
+    "http://via.placeholder.com/400/red",
+    "http://via.placeholder.com/400/w12",
+    "http://via.placeholder.com/400/q64",
+    "http://via.placeholder.com/400/t52",
+    "http://via.placeholder.com/400/x35",
   ]
 
   $list.click(function(){
-    // 클릭할 당시 현재의 인덱스 값을 변수명에 임시로 저장한다.
     let list_index = $(this).index();
-
     $img.attr("src", content_img[list_index])
     return false;
+  })
+
+  let slide_num = 0;
+  $(".design-content .content-wrap .machine .button ul li").click(function(){
+
+    $(".design-content .content-wrap .folder ul li").eq(slide_num).stop().animate({
+      left: "50%",
+      opacity: 0,
+      zIndex : "2"
+    })
+    slide_num = $(this).index();
+    // console.log(slide_num)
+    // alert(slide_num)
+    $(".design-content .content-wrap .folder ul li").eq(slide_num).css("left","50%").stop().animate({
+      left: "-220px",
+      opacity: 1,
+      zIndex : "1"
+    })
   })
 })
