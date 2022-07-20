@@ -6,7 +6,6 @@ $("document").ready(function(){
   $(".design-content .machine .button ul li").eq(0).addClass("on")
   $(".design-content .machine .button ul li #light").eq(0).addClass("on")
   // $(".design-content .content-wrap .folder ul li").eq(0).addClass("on")
-
         let i = 0;
         let count = 0;
           gsap.registerPlugin(ScrollTrigger);
@@ -126,7 +125,7 @@ $("document").ready(function(){
     console.log(i)
     $(".indicator ul li").eq(0).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 3890
+        scrollTop: 0
       }, 1500)
     })
     $(".indicator ul li").eq(1).click(function(){
@@ -159,29 +158,34 @@ $("document").ready(function(){
     $("html,body").stop().animate({
       scrollTop: 5057
     }, 1500)
+    return false;
   })
 
   $(".nav ul li").click(function(){
     let i = $(this).index()
     $(".nav ul li").eq(0).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 3900
+        scrollTop: 0
       }, 1500)
+      return false;
     })
     $(".nav ul li").eq(1).click(function(){
       $("html,body").stop().animate({
         scrollTop: 5057
       }, 1500)
+      return false;
     })
     $(".nav ul li").eq(3).click(function(){
       $("html,body").stop().animate({
         scrollTop: 6140
       }, 1500)
+      return false;
     })
     $(".nav ul li").eq(4).click(function(){
       $("html,body").stop().animate({
         scrollTop: 8300
       }, 1500)
+      return false;
     })
   })
   $(".mobile .mobile-btn ul li").click(function(){
@@ -213,6 +217,7 @@ $("document").ready(function(){
     $(".window").removeClass("on")
     $("html, body").css("overflow", "hidden visible")
   })
+
   $(".design-content .content-wrap .machine .button ul li").click(function(){
     let i = $(this).index()
       $(".design-content .content-wrap .machine .button ul li").removeClass("on").eq(i).addClass("on")
@@ -222,6 +227,7 @@ $("document").ready(function(){
       // $(".design-content .content-wrap .machine .button ul li").eq(i).toggleClass("on")
       return false;
   })
+
   const $list = $(".design-content .machine .button ul li")
 
   const $img = $(".design-content .machine .big-box img")
@@ -242,7 +248,6 @@ $("document").ready(function(){
 
   let slide_num = 0;
   $(".design-content .content-wrap .machine .button ul li").click(function(){
-
     $(".design-content .content-wrap .folder ul li").eq(slide_num).stop().animate({
       left: "50%",
       opacity: 0,
@@ -256,5 +261,15 @@ $("document").ready(function(){
       opacity: 1,
       zIndex : "1"
     })
+  })
+  $(".section.about .skill > p").click(function(){
+    if(count >= 0){
+      count++;
+      $(".section.about .skill ul li").addClass("on")
+    }if(count == 1){
+      $(".section.about .skill ul li").removeClass("on")
+    }if(count > 1){
+      count = 0;
+    }
   })
 })

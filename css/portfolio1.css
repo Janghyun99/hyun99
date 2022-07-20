@@ -39,6 +39,31 @@ a{text-decoration: none; color: #000;}
     font-weight: normal;
     font-style: normal;
 }
+@font-face{
+    font-family: "NotoSansKR-Black";
+    src: url(../res/NotoSansKR-Black.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "NotoSansKR-Bold";
+    src: url(../res/NotoSansKR-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "NotoSansKR-Regular";
+    src: url(../res/NotoSansKR-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "NotoSansKR-Medium";
+    src: url(../res/NotoSansKR-Medium.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 input{font-family: "SB aggro L";
     line-height: 40px;
@@ -76,6 +101,14 @@ section{overflow: hidden;}
     bottom: 30px;
     cursor: pointer;
     /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.6); */
+}
+.chat-bot > img{
+    width: 75%;
+    height: 55%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .message{
@@ -334,59 +367,6 @@ section{overflow: hidden;}
     visibility: visible;
     opacity: 1;
 }
-
-.indicator ul li:nth-child(3):hover ul li{
-    opacity: 1;
-    
-}
-.indicator ul li:nth-child(3) ul{
-    position: absolute;
-    width: 100px;
-    height: 70px;
-    overflow: hidden;
-    left: 20px;
-    top: 15px;
-    margin: 5px 0;
-}
-
-.indicator ul li:nth-child(3) > ul li{
-    font-family: "SB aggro L";
-    width: 81px;
-    height: 18px;
-    top: -70px;
-    position: relative;
-    left: 0px;
-    border: 0;
-    margin: 0;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 5px;
-    transition: 1s 1s;
-    /* line-height: 17px; */
-}
-.indicator ul li:nth-child(3) > ul li::after{
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background-color: #3f5692;
-    opacity: 0;
-    /* transition: 0.3s 0.5s; */
-}
-.indicator ul li:nth-child(3) > ul li:hover::after{
-    opacity: 1;
-}
-
-.indicator ul li:nth-child(3) > ul li:nth-child(2){
-    top: -60px;
-}
-.indicator ul li:nth-child(3):hover ul li{
-    top: 0px;
-}
 /* indicator */
 
 /* nav */
@@ -616,13 +596,13 @@ video{width: 100%; height: 100%;}
     transform: translateX(-50%);
 }
 .section.about .about-wrap .picture{
-    width: 345px;
-    height: 345px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.2);
     position: absolute;
     top: 120px;
-    left: 120px;
+    left: 110px;
 }
 .section.about .about-wrap .about-text{
     position: relative;
@@ -647,11 +627,11 @@ video{width: 100%; height: 100%;}
 }
 .section.about .about-wrap .about-profile{
     position: relative;
-    top: 145px;
-    left: 570px;
+    top: 100px;
+    left: 520px;
 }
 .section.about .about-wrap .about-profile p:nth-child(1){
-    font-family: "SB aggro M";
+    font-family: "NotoSansKR-Bold";
     font-size: 22px;
     margin-bottom: 30px;
 }
@@ -669,11 +649,11 @@ video{width: 100%; height: 100%;}
 }
 .section.about .about-wrap .about-education{
     position: relative;
-    left: 570px;
-    top: 300px;
+    left: 520px;
+    top: 220px;
 }
 .section.about .about-wrap .about-education p:nth-child(1){
-    font-family: "SB aggro M";
+    font-family: "NotoSansKR-Bold";
     font-size: 22px;
     margin-bottom: 30px;
 }
@@ -687,14 +667,14 @@ video{width: 100%; height: 100%;}
 }
 .section.about .about-hobby{
     position: absolute;
-    bottom: 130px;
-    right: 320px;
+    top: 140px;
+    right: 370px;
 }
 .section.about .about-hobby{
     font-size: 0;
 }
 .section.about .about-hobby p{
-    font-family: "SB aggro M";
+    font-family: "NotoSansKR-Bold";
     font-size: 22px;
     margin-bottom: 30px;
 }
@@ -717,6 +697,82 @@ video{width: 100%; height: 100%;}
 .section.about .about-hobby ul li:hover{
     background-color: rgba(0,0,0,0.2);
 }
+.section.about .skill > p{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    line-height: 36px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    right: 367px;
+    bottom: 365px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    font-family: "NotoSansKR-Bold";
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.section.about .skill > p:hover{
+    right: 364px;
+    bottom: 362px;
+    box-shadow: 0 0 0 rgba(0,0,0,0.0);
+}
+.section.about .skill ul{
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.section.about .skill ul li{
+    width: 200px;
+    height: 16px;
+    border: 1px solid #aaa;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    position: relative;
+    right: 238px;
+    box-sizing: border-box;
+}
+.section.about .skill ul li > p:nth-child(2){
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    left: -60px;
+    line-height: 16px;
+    text-align: center;
+}
+.section.about .skill ul li::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 15px;
+    background-color: #aaa;
+    left: 0;
+    top: 0;
+    transition: 1s;
+}
+.section.about .skill ul li:nth-child(1).on::after{
+    width: 170px;
+}
+.section.about .skill ul li:nth-child(2).on::after{
+    width: 180px;
+}
+.section.about .skill ul li:nth-child(3).on::after{
+    width: 160px;
+}
+.section.about .skill ul li:nth-child(4).on::after{
+    width: 150px;
+}
+.section.about .skill ul li:nth-child(5).on::after{
+    width: 140px;
+}
+
+
 /* about */
 
 /* work */
@@ -776,7 +832,7 @@ video{width: 100%; height: 100%;}
     background-color: #d4b1db;
     opacity: 0.5;
 }
-.section.work .swiper-slide .slide-btn:hover{
+.section.work .swiper-slide .detail-btn:hover{
     background-color: rgba(0,0,0,0.2);
 }
 
@@ -789,7 +845,7 @@ video{width: 100%; height: 100%;}
     top: 270px;
     right: 360px;
 }
-.section.work .swiper-slide .slide-btn{
+.section.work .swiper-slide .detail-btn{
     width: 150px;
     height: 50px;
     border: 1px solid #fff;
@@ -802,7 +858,7 @@ video{width: 100%; height: 100%;}
     line-height: 50px;
     cursor: pointer;
 }
-.section.work .swiper-slide .slide-btn a{
+.section.work .swiper-slide .detail-btn a{
     color: #fff;
 }
 .swiper-pagination-bullet {
@@ -953,7 +1009,7 @@ video{width: 100%; height: 100%;}
     bottom: 2px;
 }
 
-.section.work .swiper-slide .slide-btn{
+.section.work .swiper-slide .detail-btn{
     width: 150px;
     height: 50px;
     border: 1px solid #fff;
@@ -965,8 +1021,9 @@ video{width: 100%; height: 100%;}
     text-align: center;
     line-height: 50px;
     cursor: pointer;
+    transition: 0.3s;
 }
-.section.work .swiper-slide .slide-btn a{
+.section.work .swiper-slide .detail-btn a{
     color: #fff;
 }
 /* ------------design------------------ */
@@ -1729,7 +1786,7 @@ input{font-size: 14px;}
     background-color: #d4b1db;
     position: relative;
 }
-.section.work .swiper-slide .slide-btn:hover{
+.section.work .swiper-slide .detail-btn:hover{
     background-color: rgba(0,0,0,0.2);
 }
 .section.work .swiper-slide .item{
@@ -1800,7 +1857,7 @@ input{font-size: 14px;}
 .next:hover::after{
     display: none;
 }
-.section.work .swiper-slide .slide-btn{
+.section.work .swiper-slide .detail-btn{
     width: 20vw;
     height: 8vw;
     border: 1px solid #fff;
