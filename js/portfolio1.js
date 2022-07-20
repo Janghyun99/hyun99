@@ -3,8 +3,9 @@ $("document").ready(function(){
   $(".indicator ul li").eq(0).addClass("on")
   $(".nav ul li").eq(0).addClass("on")
   $(".section.work .work-content .number ul li").eq(0).addClass("on")
-  $(".design-content .machine .button ul li").eq(0).addClass("on")
-  $(".design-content .machine .button ul li #light").eq(0).addClass("on")
+  $(".design-content .button ul li").eq(0).addClass("on")
+  $(".design-content .button ul li #light").eq(0).addClass("on")
+  $(".design-content .exp ul li").eq(0).addClass("on")
   // $(".design-content .content-wrap .folder ul li").eq(0).addClass("on")
         let i = 0;
         let count = 0;
@@ -15,7 +16,7 @@ $("document").ready(function(){
           scrub: true,
           pin: true,
           start: "center center",
-          end: "+=4000",
+          end: "+=3000",
           ease: "power2"
         }
       })
@@ -80,11 +81,11 @@ $("document").ready(function(){
   $(window).scroll(function(){
     let pos = $(window).scrollTop()
     // console.log(pos)
-    if(pos < 4795){
+    if(pos < 3795){
       $(".indicator ul li").eq(0).addClass("on")
       $(".nav ul li").eq(0).addClass("on")
     }
-    if(pos >= 4795){
+    if(pos >= 3795){
       $(".nav ul li").eq(0).removeClass("on")
       $(".nav ul li").eq(1).addClass("on")
       $(".indicator ul li").eq(0).removeClass("on")
@@ -93,7 +94,7 @@ $("document").ready(function(){
       $(".nav ul li").eq(1).removeClass("on")
       $(".indicator ul li").eq(1).removeClass("on")
     }
-    if(pos >= 5900){
+    if(pos >= 4900){
       $(".nav ul li").eq(1).removeClass("on")
       $(".indicator ul li").eq(1).removeClass("on")
       $(".nav ul li").eq(3).addClass("on")
@@ -102,7 +103,7 @@ $("document").ready(function(){
       $(".nav ul li").eq(3).removeClass("on")
       $(".indicator ul li").eq(2).removeClass("on")
     }
-    if(pos >= 7900){
+    if(pos >= 6900){
       $(".nav ul li").eq(3).removeClass("on")
       $(".indicator ul li").eq(2).removeClass("on")
       $(".nav ul li").eq(4).addClass("on")
@@ -111,7 +112,7 @@ $("document").ready(function(){
       $(".nav ul li").eq(4).removeClass("on")
       $(".indicator ul li:nth-child(4)").removeClass("on")
     }
-    if(pos > 4000){
+    if(pos > 3000){
       $(".nav").addClass("on")
     }else{
       $(".nav").removeClass("on")
@@ -130,22 +131,22 @@ $("document").ready(function(){
     })
     $(".indicator ul li").eq(1).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 5057
+        scrollTop: 4057
       }, 1500)
     })
     $(".indicator ul li").eq(2).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 6140
+        scrollTop: 5140
       }, 1500)
     })
     $(".indicator ul li:nth-child(3) ul li").eq(1).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 7300
+        scrollTop: 6300
       }, 1500)
     })
     $(".indicator ul li:nth-child(4)").click(function(){
       $("html,body").stop().animate({
-        scrollTop: 8300
+        scrollTop: 7300
       }, 1500)
     })
     // $(".indicator ul li:nth-child(3) ul li").eq(0).click(function(){
@@ -156,7 +157,7 @@ $("document").ready(function(){
   })
   $(".about-btn").click(function(){
     $("html,body").stop().animate({
-      scrollTop: 5057
+      scrollTop: 4057
     }, 1500)
     return false;
   })
@@ -171,19 +172,19 @@ $("document").ready(function(){
     })
     $(".nav ul li").eq(1).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 5057
+        scrollTop: 4057
       }, 1500)
       return false;
     })
     $(".nav ul li").eq(3).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 6140
+        scrollTop: 5140
       }, 1500)
       return false;
     })
     $(".nav ul li").eq(4).click(function(){
       $("html,body").stop().animate({
-        scrollTop: 8300
+        scrollTop: 7300
       }, 1500)
       return false;
     })
@@ -218,58 +219,40 @@ $("document").ready(function(){
     $("html, body").css("overflow", "hidden visible")
   })
 
-  $(".design-content .content-wrap .machine .button ul li").click(function(){
+  $(".design-content .button ul li").click(function(){
     let i = $(this).index()
-      $(".design-content .content-wrap .machine .button ul li").removeClass("on").eq(i).addClass("on")
-      $(".design-content .content-wrap .folder ul li").eq(i).toggleClass("on")
-      $(".design-content .content-wrap .machine .button ul li #light").removeClass("on").eq(i).addClass("on")
-      // $(".design-content .content-wrap .folder ul li").removeClass("on").eq(i).addClass("on")
-      // $(".design-content .content-wrap .machine .button ul li").eq(i).toggleClass("on")
+      $(".design-content .button ul li").removeClass("on").eq(i).addClass("on")
+      $(".design-content .button ul li #light").removeClass("on").eq(i).addClass("on")
+      $(".design-content .exp ul li").removeClass("on").eq(i).addClass("on")
       return false;
   })
 
-  const $list = $(".design-content .machine .button ul li")
+  const $list = $(".design-content .button ul li");
 
-  const $img = $(".design-content .machine .big-box img")
+  const $img = $(".design-content .design-item .big-box img")
 
   let content_img = [
-    "http://via.placeholder.com/400/red",
     "http://via.placeholder.com/400/w12",
     "http://via.placeholder.com/400/q64",
-    "http://via.placeholder.com/400/t52",
-    "http://via.placeholder.com/400/x35",
+    "http://via.placeholder.com/400/t52"
   ]
-
   $list.click(function(){
+    // 클릭할 당시 현재의 인덱스 값을 변수명에 임시로 저장한다.
     let list_index = $(this).index();
-    $img.attr("src", content_img[list_index])
-    return false;
-  })
 
-  let slide_num = 0;
-  $(".design-content .content-wrap .machine .button ul li").click(function(){
-    $(".design-content .content-wrap .folder ul li").eq(slide_num).stop().animate({
-      left: "50%",
-      opacity: 0,
-      zIndex : "2"
-    })
-    slide_num = $(this).index();
-    // console.log(slide_num)
-    // alert(slide_num)
-    $(".design-content .content-wrap .folder ul li").eq(slide_num).css("left","50%").stop().animate({
-      left: "-220px",
-      opacity: 1,
-      zIndex : "1"
-    })
+    $img.attr("src", content_img[list_index])
   })
-  $(".section.about .skill > p").click(function(){
+  $(".section.about .skill > p:nth-child(1)").click(function(){
     if(count >= 0){
       count++;
-      $(".section.about .skill ul li").addClass("on")
     }if(count == 1){
+      $(".section.about .skill ul li").addClass("on")
+    }if(count ==2){
       $(".section.about .skill ul li").removeClass("on")
-    }if(count > 1){
-      count = 0;
+    }if(count > 2){
+      count=0;
     }
   })
+
+
 })

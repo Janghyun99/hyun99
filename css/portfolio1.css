@@ -570,6 +570,9 @@ video{width: 100%; height: 100%;}
 .section{
     overflow: hidden;
 }
+.section.title-text span{
+    font-family: "NotoSansKR-Medium";
+}
 /* about */
 
 .section.about{
@@ -601,20 +604,13 @@ video{width: 100%; height: 100%;}
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.2);
     position: absolute;
-    top: 120px;
+    top: 15%;
     left: 110px;
 }
 .section.about .about-wrap .about-text{
     position: relative;
-    top: 520px;
-    left: 120px;
-}
-.section.about .about-wrap .about-text::after{
-    content: "";
-    width: 1px;
-    height: 100px;
-    background-color: #000;
-    position: absolute;
+    top: 55%;
+    left: 90px;
 }
 .section.about .about-wrap .about-text p:nth-child(1){
     font-family: "SB aggro L";
@@ -650,7 +646,7 @@ video{width: 100%; height: 100%;}
 .section.about .about-wrap .about-education{
     position: relative;
     left: 520px;
-    top: 220px;
+    top: 223px;
 }
 .section.about .about-wrap .about-education p:nth-child(1){
     font-family: "NotoSansKR-Bold";
@@ -667,8 +663,8 @@ video{width: 100%; height: 100%;}
 }
 .section.about .about-hobby{
     position: absolute;
-    top: 140px;
-    right: 370px;
+    top: 188px;
+    right: 170px;
 }
 .section.about .about-hobby{
     font-size: 0;
@@ -676,16 +672,21 @@ video{width: 100%; height: 100%;}
 .section.about .about-hobby p{
     font-family: "NotoSansKR-Bold";
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+}
+.section.about .about-hobby ul li:nth-child(1){
+    margin-left: 0;
 }
 
 .section.about .about-hobby ul li{
+    float: left;
     width: 66px;
     height: 66px;
     border: 1px solid #000;
     text-align: center;
     line-height: 66px;
     border-radius: 50%;
+    margin-left: 50px;
     margin-bottom: 30px;
     transition: 0.3s;
 }
@@ -697,7 +698,7 @@ video{width: 100%; height: 100%;}
 .section.about .about-hobby ul li:hover{
     background-color: rgba(0,0,0,0.2);
 }
-.section.about .skill > p{
+.section.about .skill > p:nth-child(1){
     width: 100px;
     height: 40px;
     position: absolute;
@@ -706,18 +707,24 @@ video{width: 100%; height: 100%;}
     background-color: #fff;
     border: 1px solid #000;
     right: 367px;
-    bottom: 365px;
+    bottom: 380px;
     cursor: pointer;
     transition: 0.2s;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
     font-family: "NotoSansKR-Bold";
     font-size: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
-.section.about .skill > p:hover{
+.section.about .skill > p:nth-child(1):hover{
     right: 364px;
-    bottom: 362px;
+    bottom: 377px;
     box-shadow: 0 0 0 rgba(0,0,0,0.0);
+}
+.section.about .skill > p:nth-child(2){
+    display: block;
+    position: absolute;
+    right: 280px;
+    bottom: 407px;
 }
 .section.about .skill ul{
     width: 200px;
@@ -726,7 +733,6 @@ video{width: 100%; height: 100%;}
     right: 0;
     bottom: 0;
 }
-
 .section.about .skill ul li{
     width: 200px;
     height: 16px;
@@ -792,7 +798,6 @@ video{width: 100%; height: 100%;}
     transform: translateX(-50%);
     color: #fff;
 }
-
 /* .work-wrap{
     max-width: 1145px;
     height: 400px;
@@ -918,14 +923,12 @@ video{width: 100%; height: 100%;}
     position: absolute;
     top: 145px;
     left: 20vw;
-    width: 100px;
+    width: 50px;
     height: 20px;
     color: #fff;
     z-index: 999;
     cursor: pointer;
     line-height: 20px;
-    padding-left: 45px;
-
 }
 .prev::before{
     content: "";
@@ -933,7 +936,7 @@ video{width: 100%; height: 100%;}
     width: 40px;
     height: 2px;
     top: 50%;
-    left: 0;
+    left: -45px;
     transform: translateY(-50%);
     background-color: #fff;
     transition: 0.3s;
@@ -944,7 +947,7 @@ video{width: 100%; height: 100%;}
     width: 40px;
     height: 2px;
     bottom: 50%;
-    left: 0;
+    left: -45px;
     transform: translateY(-50%);
     background-color: #fff;
     transition: 0.3s;
@@ -966,13 +969,12 @@ video{width: 100%; height: 100%;}
     position: absolute;
     top: 145px;
     right: 20vw;
-    width: 100px;
+    width: 50px;
     height: 20px;
     color: #fff;
     z-index: 999;
     cursor: pointer;
     line-height: 20px;
-    padding-right: 45px;
 }
 .next::before{
     content: "";
@@ -980,7 +982,7 @@ video{width: 100%; height: 100%;}
     width: 40px;
     height: 2px;
     top: 50%;
-    right: 0;
+    right: -45px;
     transform: translateY(-50%);
     background-color: #fff;
     transition: 0.3s;
@@ -991,7 +993,7 @@ video{width: 100%; height: 100%;}
     width: 40px;
     height: 2px;
     bottom: 50%;
-    right: 0;
+    right: -45px;
     transform: translateY(-50%);
     background-color: #fff;
     transition: 0.3s;
@@ -1028,23 +1030,19 @@ video{width: 100%; height: 100%;}
 }
 /* ------------design------------------ */
 .design-content{
-    width: 100%;
-    height: 1100px;
+    width: 1400px;
+    height: 1000px;
     overflow: hidden;
+    margin: 0 auto;
     position: relative;
 }
-
-.design-content .content-wrap{
-    width: 1400px;
-    margin: 0 auto;
-    text-align: center;
-}
-.design-content .content-wrap .machine > p{
+.design-content > p{
     font-family: "SB aggro B";
     margin: 0 auto;
     font-size: 28px;
-    margin-top: 40px;
+    margin-top: 60px;
     color: #000;
+    margin-top: 50px;
     width: 200px;
     height: 50px;
     border: 1px solid #000;
@@ -1052,93 +1050,25 @@ video{width: 100%; height: 100%;}
     line-height: 50px;
     margin-bottom: 20px;
 }
-.design-content .content-wrap .machine{
-    position: absolute;
-    /* margin: 0 auto; */
-    border-radius: 20px 20px 0 0;
-    width: 600px;
-    height: 800px;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    /* border: 1px solid #fff; */
-    border: 3px solid #000;
-    background-color: #fff;
-    z-index: 1;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
-}
-.design-content .content-wrap .machine .big-box{
-    width: 500px;
-    height: 450px;
-    border: 2px solid #000;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-.design-content .content-wrap .machine .big-box img{
-    width: 100%;
-    height: 100%;
-}
-.design-content .content-wrap .folder{
-    position: relative;
-    width: 400px;
-    height: 400px;
-    right: -1100px;
-    top: 300px;
-    background-color: #000;
-}
-.design-content .content-wrap .folder > img{
-    width: 300px;
-    height: 450px;
-    transform: rotate(-90deg);
-}
-.design-content .content-wrap .folder ul li{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transition: 0.5s;
-}
-.design-content .content-wrap .folder ul li:nth-child(1){
-    left: -220px;
-}
-.design-content .content-wrap .folder ul li img{
-    width: 350px;
-    height: 350px;
-    /* opacity: 0; */
-}
-.design-content .content-wrap .folder ul li.on{
-    left: -220px;
-}
 
-.design-content .content-wrap .folder ul li.on img{
-    opacity: 1;
-}
-.design-content .content-wrap .folder ul li.on{
-    left: -220px;
-    z-index: 1;
-}
-
-.design-content .content-wrap .disk ul li img{
-    width: 100%;
-    height: 100%;
-}
-.design-content .machine .button{
-    position: relative;
-    top: 50px;
+.design-content .button{
+    position: absolute;
+    bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
-    width: 500px;
-    height: 80px;
+    width: 240px;
+    height: 70px;
     /* background-color: yellow; */
-    /* z-index: 9; */
+    z-index: 9;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    background-color: #fff;
 }
 
-.design-content .machine .button ul li{
+.design-content .button ul li{
     float: left;
-    width: 100px;
-    height: 80px;
-    line-height: 80px;
+    width: 80px;
+    height: 70px;
+    line-height: 70px;
     text-align: center;
     position: relative;
     /* z-index: 1; */
@@ -1146,11 +1076,15 @@ video{width: 100%; height: 100%;}
     background-color: #fff;
     cursor: pointer;
 }
-.design-content .machine .button ul li a{
+.design-content .button ul li a{
     color: #ff3e3e;
 }
+.design-content .button ul li:nth-child(4) a,
+.design-content .button ul li:nth-child(5) a{
+    font-size: 14px;
+}
 
-.design-content .machine .button ul li::before{
+.design-content .button ul li::before{
     content: "";
     position: absolute;
     width: 40px;
@@ -1167,23 +1101,23 @@ video{width: 100%; height: 100%;}
     transform: translateZ(-1px)  translateX(-50%);
     z-index: -1;
 }
-.design-content .machine .button ul li.on::before{
+.design-content .button ul li.on::before{
     top: -7px;
     background-color: #6ee162;
     box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
 }
-.design-content .machine .button ul li.on a{
+.design-content .button ul li.on a{
     color: #6ee162;
 }
 
-.design-content .machine .button ul li:hover::before{
+.design-content .button ul li:hover::before{
     background-color: #6ee162;
     box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
 }
-.design-content .machine .button ul li:hover a{
+.design-content .button ul li:hover a{
     color: #6ee162;
 }
-.design-content .machine .button ul li:not(:nth-child(1))::after{
+.design-content .button ul li:not(:nth-child(1))::after{
     content: "";
     width: 1px;
     height: 40px;
@@ -1193,7 +1127,7 @@ video{width: 100%; height: 100%;}
     transform: translateY(-50%);
     left: 0;
 }
-.design-content .machine .button ul li #light{
+.design-content .button ul li #light{
     width: 15px;
     height: 15px;
     background-color: #ff3e3e;
@@ -1201,14 +1135,76 @@ video{width: 100%; height: 100%;}
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -50px;
+    bottom: -30px;
     box-shadow: 0px 0px 10px 0px rgba(255,62,62,0.5);
     transition: 0.3s;
 }
 
-.design-content .machine .button ul li #light.on{
+.design-content .button ul li #light.on{
     background-color: #6ee162;
     box-shadow: 0px 0px 10px 0px rgba(110,225,98,0.5);
+}
+
+/* ---------------------------------------------------------- */
+
+.design-content .design-item{
+    float: left;
+    width: 100%;
+    height: 750px;
+    position: relative;
+}
+
+.design-content .design-item .big-box{
+    width: 735px;
+    height: 100%;
+    position: relative;
+}
+.design-content .design-item .big-box img{
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.design-content .design-item .exp{
+    width: 665px;
+    height: 800px;
+    /* position: relative; */
+}
+
+.design-content .exp ul li{
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    position: absolute;
+    right: -100%;
+    top: 50px;
+    transition: 1s;
+}
+.design-content .exp ul li a{
+    position: absolute;
+    padding: 5px 20px;
+    border: 1px solid #000;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.design-content .exp ul li a:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.design-content .exp ul li.on{
+    right: 120px;
+}
+.design-content .exp ul li > p{
+    margin: 30px;
+}
+.design-content .exp ul li > p:nth-child(2){
+    margin-top: 130px;
 }
 
 /* ------------design------------------ */
@@ -1218,27 +1214,36 @@ video{width: 100%; height: 100%;}
 /* contact */
 .section.contact{
     width: 100%;
-    height: 800px;
+    height: 1000px;
     align-items: center;
     position: relative;
 }
 .section.contact .contact-color{
     width: 100%;
-    height: 380px;
+    height: 1000px;
     background-color: #5ec4b9;
     position: absolute;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 /* .section.contact .contact-color .contact-wrap{
     max-width: 1145px;
     height: 400px;
     margin: 0 auto;
 } */
+.section.contact .contact-color .contact-wrap{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 100px;
+}
+
 .section.contact .contact-color .contact-wrap p:nth-child(1){
     font-family: "SB aggro L";
     font-size: 40px;
     color: #fff;
-    margin-top: 100px;
     text-align: center;
 }
 .section.contact .contact-color .contact-wrap p:nth-child(2){
@@ -1255,12 +1260,13 @@ video{width: 100%; height: 100%;}
     border: 1px solid #fff;
     position: absolute;
     left: 50%;
-    bottom: 88px;
+    top: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
     line-height: 75px;
     text-align: center;
     transition: 0.3s;
+    margin-top: 70px;
     cursor: pointer;
     /* box-shadow: 0 0 2px 0 rgba(0,0,0,0.5); */
 }
