@@ -232,7 +232,7 @@ $("document").ready(function(){
   const $img = $(".design-content .design-item .big-box img")
 
   let content_img = [
-    "http://via.placeholder.com/400/w12",
+    "images/event-page-1.jpg",
     "http://via.placeholder.com/400/q64",
     "http://via.placeholder.com/400/t52"
   ]
