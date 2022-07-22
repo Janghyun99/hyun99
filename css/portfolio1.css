@@ -395,7 +395,20 @@ section{overflow: hidden;}
 .nav.on ul li:hover::after{
     background-color: #fff;
 }
+.nav ul li:nth-child(3){
+    width: 229px;
+    height: 80px;
+    position: relative;
+}
 
+.nav ul li:nth-child(3) img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 .nav-wrap{
     max-width: 1145px;
@@ -677,16 +690,16 @@ video{width: 100%; height: 100%;}
 .section.about .about-hobby{
     font-size: 0;
 }
-.section.about .about-hobby p{
+.section.about .about-hobby > p{
     font-family: "NotoSansKR-Bold";
     font-size: 22px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 .section.about .about-hobby ul li:nth-child(1){
     margin-left: 0;
 }
 
-.section.about .about-hobby ul li{
+.section.about .about-hobby > ul > li{
     float: left;
     width: 66px;
     height: 66px;
@@ -695,15 +708,68 @@ video{width: 100%; height: 100%;}
     line-height: 66px;
     border-radius: 50%;
     margin-left: 50px;
-    margin-bottom: 30px;
+    top: 30px;
     transition: 0.3s;
+    position: relative;
+    cursor: pointer;
 }
+.section.about .about-hobby .hobby-text{
+    position: absolute;
+    font-size: 14px;
+    bottom: -130px;
+    width: 300px;
+    height: 80px;
+    overflow: hidden;
+}
+.section.about .about-hobby .hobby-text::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 60px;
+    background-color: #aaa;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+}
+.section.about .about-hobby .hobby-text::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 60px;
+    background-color: #aaa;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+}
+
+.section.about .about-hobby .hobby-text ul li{
+    position: absolute;
+    left: -300px;
+    width: 300px;
+    height: 80px;
+    transition: 1s;
+    text-align: center;
+    font-size: 14px;
+}
+.section.about .about-hobby .hobby-text ul li:nth-child(2){
+    font-size: 13.5px;
+}
+
+
+.section.about .about-hobby .hobby-text ul li p{
+    margin-top: 20px;
+}
+
+.section.about .about-hobby .hobby-text ul li.on{
+    left: 0;
+}
+
 .section.about .about-hobby ul li img{
     margin-top: 10px;
     width: 46px;
     height: 46px;
 }
-.section.about .about-hobby ul li:hover{
+.section.about .about-hobby > ul > li:hover{
     background-color: rgba(0,0,0,0.2);
 }
 .section.about .skill > p:nth-child(1){
@@ -846,43 +912,39 @@ video{width: 100%; height: 100%;}
 .section.work .swiper-slide .detail-btn:hover{
     background-color: rgba(0,0,0,0.2);
 }
+.section.work .swiper-slide .view-btn:hover a{
+    background-color: rgba(0,0,0,0.2);
+}
 
 .section.work .swiper-slide .item > img{
     position: absolute;
     width: 800px;
-    height: 600px;
+    height: 571px;
     top: 320px;
     right: 300px;
 }
+.section.work .swiper-slide:nth-child(2) .item > img{
+    position: absolute;
+    width: 800px;
+    height: 571px;
+    top: 320px;
+    right: 300px;
+}
+
 .section.work .swiper-slide:nth-child(4) .item > img{
     position: absolute;
     width: 800px;
-    height: 600px;
-    top: 340px;
-    right: 350px;
-}
-
-.section.work .swiper-slide:nth-child(3) .item > img,
-.section.work .swiper-slide:nth-child(5) .item > img{
-    position: absolute;
-    width: 800px;
-    height: 600px;
+    height: 571px;
     top: 300px;
     right: 200px;
 }
 
-.section.work .swiper-slide .detail-btn{
-    width: 150px;
-    height: 50px;
-    border: 1px solid #fff;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 10px;
+.section.work .swiper-slide:nth-child(5) .item > img{
     position: absolute;
-    bottom: 200px;
-    left: 365px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
+    width: 800px;
+    height: 571px;
+    top: 300px;
+    right: 200px;
 }
 .section.work .swiper-slide .explaning{
     width: 500px;
@@ -896,8 +958,10 @@ video{width: 100%; height: 100%;}
     font-size: 34px;
     margin-bottom: 10px;
 }
+.section.work .swiper-slide .explaning p{
+    font-family: "NotoSansKR-Bold";
+}
 .section.work .swiper-slide .explaning p:nth-child(2){
-    font-family: "NotoSansKR-Regular";
     margin-bottom: 40px;
     font-size: 24px;
 }
@@ -907,10 +971,112 @@ video{width: 100%; height: 100%;}
 }
 
 .section.work .swiper-slide .explaning p{
-    font-family: "NotoSansKR-Regular";
     font-size: 24px;
     margin-bottom: 0px;
     color: #fff;
+}
+.section.work .swiper-slide .detail-btn{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 365px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.section.work .swiper-slide:nth-child(2) .detail-btn,
+.section.work .swiper-slide:nth-child(3) .detail-btn,
+.section.work .swiper-slide:nth-child(6) .detail-btn
+{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    left: 470px;
+    font-size: 16px;
+}
+.section.work .swiper-slide:nth-child(2) .detail-btn{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    left: 470px;
+}
+.section.work .swiper-slide:nth-child(2) .detail-btn a{
+    font-size: 16px;
+}
+.section.work .swiper-slide .before-btn:hover a{
+    background-color: rgba(0,0,0,0.2);
+}
+.section.work .swiper-slide .detail-btn{
+    width: 100px;
+}
+.section.work .swiper-slide .before-btn a{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 365px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.section.work .swiper-slide .view-btn a{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 200px;
+    left: 575px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.section.work .swiper-slide:nth-child(1) .view-btn a,
+.section.work .swiper-slide:nth-child(4) .view-btn a,
+.section.work .swiper-slide:nth-child(5) .view-btn a{
+    left: 470px;
+}
+.detail{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+}
+.detail .detail-content{
+    display: none;
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    overflow-y: scroll;
+}
+.detail .detail-content img{
+    width: 100%;
 }
 
 .section.work .swiper-slide .detail-btn a{
@@ -1065,20 +1231,6 @@ video{width: 100%; height: 100%;}
     bottom: 2px;
 }
 
-.section.work .swiper-slide .detail-btn{
-    width: 150px;
-    height: 50px;
-    border: 1px solid #fff;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    position: absolute;
-    bottom: 200px;
-    left: 365px;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
 .section.work .swiper-slide .detail-btn a{
     color: #fff;
 }
@@ -1103,6 +1255,7 @@ video{width: 100%; height: 100%;}
     text-align: center;
     line-height: 50px;
     margin-bottom: 20px;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
 }
 
 .design-content .button{
@@ -1228,6 +1381,9 @@ video{width: 100%; height: 100%;}
     width: 665px;
     height: 800px;
     /* position: relative; */
+}
+.design-content .exp ul li span{
+    font-family: "NotoSansKR-Bold";
 }
 
 .design-content .exp ul li{

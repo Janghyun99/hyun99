@@ -84,6 +84,7 @@ $("document").ready(function(){
     if(pos < 3795){
       $(".indicator ul li").eq(0).addClass("on")
       $(".nav ul li").eq(0).addClass("on")
+      $()
     }
     if(pos >= 3795){
       $(".nav ul li").eq(0).removeClass("on")
@@ -158,7 +159,7 @@ $("document").ready(function(){
   $(".about-btn").click(function(){
     $("html,body").stop().animate({
       scrollTop: 4057
-    }, 1500)
+    }, 5500)
     return false;
   })
 
@@ -233,7 +234,7 @@ $("document").ready(function(){
 
   let content_img = [
     "images/event-page-1.jpg",
-    "http://via.placeholder.com/400/q64",
+    "images/poster.png",
     "http://via.placeholder.com/400/t52"
   ]
   $list.click(function(){
@@ -254,5 +255,17 @@ $("document").ready(function(){
     }
   })
 
-
+  $(".section.about .about-hobby ul li").click(function(){
+    let k = $(this).index()
+    $(".section.about .about-hobby .hobby-text ul li").removeClass("on").eq(k).addClass("on")
+  })
+  $(".detail-btn").click(function(){
+    $(".detail").slideDown()
+    $(".detail .detail-content").slideDown()
+    return false;
+  })
+  $(".detail").click(function(){
+    $(".detail").slideUp()
+    $(".detail .detail-content").slideUp()
+  })
 })
