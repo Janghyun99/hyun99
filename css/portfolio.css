@@ -1,0 +1,796 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+body{
+    font-family: "ONE Mobile OTF Bold";
+}
+
+@font-face {
+    font-family: "ONE Mobile OTF Bold";
+    src: url("../res/ONE\ Mobile\ OTF\ Bold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro B";
+    src: url(../res/SB\ aggro\ B.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Cafe24SsurroundAir";
+    src: url(../res/Cafe24SsurroundAir.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro M";
+    src: url(../res/SB\ aggro\ M.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SB aggro L";
+    src: url(../res/SB\ aggro\ L.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 네비 */
+.nav{
+    position: fixed;
+    top: 0;
+    font-family: "SB aggro M";
+    width: 100%;
+    height: 80px;
+    z-index: 3;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.nav .nav-wrap{
+    max-width: 1240px;
+    margin: 0 auto;  
+}
+.nav .nav-wrap .menu{
+    float: right;
+    width: 100%;
+    line-height: 80px;
+    font-size: 20px;
+}
+.nav .nav-wrap .menu ul{
+    float: right;
+}
+.nav .nav-wrap .menu ul:nth-child(1) li{
+    margin-left: 80px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+.nav .menu  ul:nth-child(1) > li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 1px;
+    bottom: 25px;
+    background-color: #000;
+    opacity: 0;
+}
+.nav .menu ul li:hover::after{
+    opacity: 1;
+    transition: 0.5s;
+}
+.nav .menu ul li.on::after{
+    opacity: 1;
+}
+/* 네비 */
+/* 뒷 배경 */
+video{width: 100%; height: 100%;}
+
+.section-video {
+    width: 100%;
+    height: 160%;
+}
+.section-video img{display: none; width: 100%; height: auto;}
+
+/* 뒷 배경 */
+
+/* 메인 화면 */
+.section.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: black;
+    text-align: center;
+}
+.section-wrap {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.section-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.section-title {
+    display: inline-block;
+    font-size: 36px;
+    /* overflow: hidden; */
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.section-title .title1{
+    display: block;
+    transform: translateY(0%);
+}
+.section-title .title2{
+    display: block;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translate(0px, -60px);
+}
+.section-title .title3{
+    opacity: 0;
+    display: block;
+    transform: translate(0px, -100px);
+}
+.section-title .title4{
+    opacity: 0;
+    display: block;
+    transform: translate(0px, -160px);
+}
+.logo{
+    font-family: "SB aggro B";
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    width: 320px;
+    height: 100px;
+    overflow: hidden;
+}
+.logo p{
+    line-height: 100px;
+    height: 100px;
+    /* margin-bottom: 50px; */
+}
+.mail{
+    font-family: "Cafe24SsurroundAir";
+    position: absolute;
+    top: 128px;
+    right: 300px;
+}
+.mail p{
+    width: 50px;
+    height: 30px;
+}
+/* 메인 화면 */
+
+/* 프로필 */
+.section{
+    overflow: hidden;
+}
+.section.about{
+    height: 1050px;
+}
+.section .about-wrap{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.section .about-wrap .top{
+    font-family: "SB aggro B";
+    margin-top: 110px;
+    font-size: 50px;
+    position: relative;
+}
+.section .about-wrap .top::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 5px;
+}
+.section .about-wrap .left{
+    margin-top: 90px;
+    width: 710px;
+    height: 520px;
+}
+.section .about-wrap .left > p:nth-child(1){
+    font-family: "SB aggro M";
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+.section .about-wrap .left > p:not(:nth-child(1)){
+    font-family: "SB aggro L";
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.section .about-wrap .left > p:nth-child(5){
+    margin-bottom: 50px;
+}
+.section .about-wrap .left ul li{
+    float: left;
+}
+.section .about-wrap .left ul li:nth-child(1){
+    font-family: "SB aggro M";
+    width: 190px;
+    height: 150px;
+    font-size: 26px;
+}
+.section .about-wrap .left ul li:nth-child(1) p{
+    margin-bottom: 40px;
+}
+.section .about-wrap .left ul li:nth-child(2){
+    font-family: "SB aggro L";
+    width: 335px;
+    height: 150px;
+    font-size: 26px;
+}
+.section .about-wrap .left ul li:nth-child(2) p{
+    margin-bottom: 40px;
+}
+.section .about-wrap .left ul li:nth-child(3) p{
+    margin-bottom: 20px;
+}
+.section .about-wrap .left{
+    float: left;
+}
+.section .about-wrap .right{
+    float: left;
+    margin-top: 100px;
+    width: 570px;
+    height: 520px;
+}
+.section .about-wrap .right .circle{
+    width: 455px;
+    height: 455px;
+    margin-left: 57.5px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.section .about-wrap{
+    margin-bottom: 100px;
+}
+.section .about-wrap .bottom > .skill p{
+    font-family: "SB aggro M";
+    font-size: 26px;
+}
+.section .about-wrap .bottom > .skill ul li{
+    float: left;
+    font-size: 0;
+    margin-top: 35px;
+}
+.section .about-wrap .bottom > .skill ul li:nth-child(1){
+    margin-left: 164px;
+    width: 70px;
+    height: 97px;
+}
+.section .about-wrap .bottom > .skill ul li:nth-child(2){
+    width: 70px;
+    height: 97px;
+    margin-left: 141px;
+}
+.section .about-wrap .bottom > .skill ul li:nth-child(3){
+    width: 70px;
+    height: 97px;
+    margin-left: 140px;
+}
+.section .about-wrap .bottom > .skill ul li:nth-child(4){
+    width: 90px;
+    height: 90px;
+    margin-left: 130px;
+}
+.section .about-wrap .bottom > .skill ul li:nth-child(4) img,
+.section .about-wrap .bottom > .skill ul li:nth-child(5) img{
+    margin-top: 7px;
+}
+
+.section .about-wrap .bottom > .skill ul li:nth-child(5){
+    width: 90px;
+    height: 90px;
+    margin-left: 120px;
+}
+/* modal */
+
+.window{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    background-color: #000;
+    top: 0;
+}
+.window-content{
+    display: none;
+    width: 65%;
+    height: 777.19px;
+    position: fixed;
+    background-color: #fff;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+.window-content a{
+    position: absolute;
+    right: 30px; 
+    top: 30px;
+    font-size: 0;
+    width: 66px;
+    height: 66px;
+}
+.window-content a::after{
+    content: "";
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.window-content a:hover::after{
+    opacity: 1;
+}
+.window-content > .left{
+    position: fixed;
+    width: 335px;
+    height: 777.19px;
+    background-color: #bfeaec;
+    border-radius: 3px 0 0 3px;
+
+}
+.window-content .left > .photo{
+    width: 232px;
+    height: 232px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 95px 0 10px 51.5px;
+
+}
+.window-content .left .profile{
+    font-family: "SB aggro L";
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    font-size: 22px;
+}
+.window-content .left .profile p:nth-child(1){
+    margin-bottom: 5px;
+}
+.window-content .left .profile p:nth-child(2){
+    position: relative;
+    margin-bottom: 30px;
+}
+.window-content .left > .profile > p:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+}
+.window-content .left > .profile > .address img{
+    margin-bottom: 10px;
+}
+.window-content .left > .profile > .address p:nth-child(4){
+    font-size: 16px;
+}
+
+/* modal */
+
+/* 프로필 */
+@media screen and (min-width:1201px){
+    .tap-picture{
+        display: none;
+    }
+    /* video:nth-child(1){
+        display: none;
+    } */
+    .picture{
+        display: none;
+    }
+}
+@media screen and (min-width:641px) and (max-width:1200px){
+    .picture{
+        display: none;
+    }
+    .about .about-wrap{
+        max-width: 1200px;
+    }
+    .section-wrap{
+        background: url("http://via.placeholder.com/1200x969") center center no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .section-video video{display: none;}
+    /* .section-video img{display: block;} */
+    .section .about-wrap .top {
+        text-align: center;
+        position: relative;
+        font-size: 34px;
+        margin-bottom: 50px;
+    }
+    /* .title-text{top: 0 !important;} */
+    .section .about-wrap .top::after{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+        width: 30%;
+    }
+    .about .about-wrap{
+        overflow: hidden;
+    }
+    .about .about-wrap{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .about .about-wrap .left{
+        margin-top: 70px;
+        width: 100%;
+    }
+    .section .about-wrap .left > p:nth-child(1){
+        font-size: 26px;
+    }
+    .section .about-wrap .left > p:nth-child(5){
+        margin-bottom: 80px;
+    }
+
+    .section .about-wrap .left > p:not(:nth-child(1)){
+        font-size: 20px;
+    }
+    .section .about-wrap .left ul{
+        width: 70%;
+        margin: 0 auto;
+        /* text-align: center; */
+        font-size: 14px;
+    }
+
+    .section .about-wrap .left ul li:nth-child(1){
+        float: left;
+        width: 35%;
+        font-size: 18px;
+    }
+    .section .about-wrap .left ul li:nth-child(2){
+        width: 65%;
+        font-size: 18px;
+    }
+
+    .about .about-wrap .left ul{
+        overflow: hidden;
+        text-align: center;   
+    }
+    .about .bottom{
+        display: none;
+    }
+
+    video:nth-child(2){
+        display: none;
+    }
+    .nav{
+        margin: 0;
+        /* padding-bottom: 80px; */
+    }
+    .nav .menu > ul:nth-child(1){
+        width: 100%;
+    }
+    .nav .menu > ul:nth-child(1) li{
+        width: 25%;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+    }
+    .nav .menu ul:nth-child(1) li::after{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav .menu > ul:nth-child(1) li:nth-child(4):after{
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav .nav-wrap .menu ul:nth-child(1) li{
+        margin: 0;
+        position: relative;
+    }
+    .nav .nav-wrap .menu ul:nth-child(2){
+        display: none;
+    }
+    .nav .nav-wrap .menu ul:nth-child(1) li::after{
+        content: "";
+        position: absolute;
+        width: 32%;
+        bottom: 22px;
+        height: 3px;
+    }
+    .nav .nav-wrap .menu ul:nth-child(1) li:nth-child(4):after{
+        width: 45%;
+        height: 3px;
+    }
+
+    .section.title-text .logo{
+        display: block;
+        position: absolute;
+        top: 77px;
+        left: 30px;
+    }
+    .section.title-text .logo p{
+        font-size: 13px;
+    }
+    .section.title-text .logo img{
+        width: 200px;
+        height: 100px;
+    }
+    .section.title-text .mail{
+        display: block;
+        position: absolute;
+        top: 113px;
+        right: 200px;
+    }
+    .tap-picture{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .tap-picture img{
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+    }
+    .tap-picture a{
+        position: absolute;     
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px; 
+        border: 1px solid #ccc; 
+        padding: 0px 30px;
+        border-radius: 3px;
+        background-color: #fff;
+        font-size: 20px;
+        line-height: 60px;
+        text-align: center;
+        font-family: "SB aggro L";
+        letter-spacing: 2px;
+    }
+    .tap-picture a:hover{
+        background-color: rgba(0,0,0,0.2);
+        border: 1px solid rgba(0,0,0,0.7);
+    }
+
+    .right{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:640px){
+    .section-wrap{
+        background: url("../images/mobile.jpg") center center no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .section-video video{display: none;}
+
+    .tap-picture{
+        display: none;
+    }
+    .about .about-wrap{
+        max-width: 640px;
+        margin: 0 auto;
+    }
+    .about .about-wrap > .top p{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .section .about-wrap .top::after{
+        top: 50px;
+        left: 50%;
+        width: 50%;
+        transform: translateX(-50%);
+    }
+    .about .about-wrap{
+        overflow: hidden;
+    }
+    .about .about-wrap{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .about .about-wrap .left{
+        width: 100%;   
+        margin-top: 50px;
+    }
+    
+    .section .about-wrap .left > p:nth-child(1){
+        font-size: 24px;
+    }
+    .section .about-wrap .left > p:nth-child(5){
+        margin-bottom: 50px;
+    }
+
+    .section .about-wrap .left > p:not(:nth-child(1)){
+        font-size: 16px;
+    }
+    .section .about-wrap .left ul{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 13px;
+    }
+    .section .about-wrap .left ul li:nth-child(1){
+        float: left;
+        font-size: 18px;
+        width: 30%;
+    }
+    .section .about-wrap .left ul li:nth-child(2){
+        font-size: 18px;
+        width: 70%
+    }
+    .about .about-wrap .left ul{
+        overflow: hidden;
+        text-align: center;   
+    }
+
+    .about .right,
+    .about .bottom{
+        display: none;
+    }
+
+    body,html{
+        -ms-overflow-style: none;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.9);
+        top: -100%;
+        z-index: 1;
+        transition: 1s;
+    }
+    .mobile.on{
+        opacity: 1;
+        top: 0;
+    }
+    .mobile .mobile-content ul{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .mobile .mobile-content ul li{
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: lighter;
+        width: 100%;
+        height: 120px;
+        text-align: center;
+        line-height: 120px;
+        position: relative;
+        cursor: pointer;
+    }
+    .mobile .mobile-content ul li::after{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: #000;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .mobile .mobile-content ul li:hover::after{
+        opacity: 1;
+    }
+
+    .m-menu{
+        width: 100%;
+        height: 100%;
+        background-color: #aaa;
+    }
+    .nav{
+        border: 0;
+        background-color: rgba(255,255,255,0.2);
+    }
+    .nav .nav-wrap .menu ul:nth-child(2) > li{
+        width: 66px;
+        height: 66px;
+        background: url(../images/arrow-down.png);
+        position: fixed;
+        top: 6px;
+        left: 50%;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
+    .nav .nav-wrap .menu > ul:nth-child(2) > li:after{
+        content: "";
+        width: 66px;
+        height: 66px;
+        background-color: rgba(0,0,0,0.2);
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+    }
+    .nav .nav-wrap .menu ul:nth-child(2) > li.on{
+        background: url(../images/arrow-up.png);
+    }
+
+    video:nth-child(2){
+        display: none;
+    }
+    video:nth-child(1){
+        position: relative;
+    }
+
+    .nav .menu ul:nth-child(1) li{
+        display: none;
+    }
+    .section.title-text .logo{
+        display: block;
+        position: absolute;
+        top: 59px;
+        left: 30px;
+        font-size: 13px;
+    }
+    .section.title-text .logo img{
+        margin-top: 30px;
+        width: 100px;
+        height: 50px;
+    }
+    .section.title-text .mail{
+        display: block;
+        position: absolute;
+        top: 97px;
+        right: 110px;
+        font-size: 13px;
+    }
+    
+    .title-text-desc{
+        font-size: 30px;
+    }
+    .title-text-desc:nth-child(1){
+        margin-top: 3px;
+    }
+    .title-text-desc:nth-child(2){
+        margin-top: 62px;
+    }
+    .title-text-desc:nth-child(3){
+        margin: 10px;
+    }
+}
+
